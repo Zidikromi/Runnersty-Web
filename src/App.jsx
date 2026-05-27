@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Countdown from 'react-countdown';
 import Navbar from './components/navbar';
 import Home from './components/home';
+import RaceStats from './components/racestats';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       
       {/* Home akan menduduki porsi layar penuh dari ujung atas sampai bawah */}
       <Home />
-
+      <RaceStats />
       {/* Contoh jika nanti countdown mau diaktifkan, beri posisi absolute/fixed agar tidak merusak layout background */}
       {/* <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 text-white">
         <Countdown date={new Date('2026-05-27T23:59:59')} />

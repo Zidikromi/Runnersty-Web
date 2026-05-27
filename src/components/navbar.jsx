@@ -9,7 +9,7 @@ export default function Navbar() {
     <>
       {/* NAVBAR UTAMA */}
       {/* Di mobile absolute (melayang), di desktop relative (tidak memotong background) */}
-      <nav className="absolute md:relative top-0 left-0 w-full bg-transparent md:bg-[#e6e2cf] md:border-b md:border-[#e6e2cf] z-45 px-6 py-4 md:py-6">
+      <nav className="absolute md:relative top-0 left-0 w-full z-50 bg-transparent md:bg-[#e6e2cf] md:border-b md:border-[#e6e2cf] z-45 px-6 py-4 md:py-6">
         
         {/* Container pembatas lebar desktop. md:px-52 HANYA jalan di desktop, mobile aman pakai full width */}
         <div className="w-full flex items-center justify-between md:max-w-7xl md:mx-auto md:px-12">
