@@ -7,11 +7,14 @@ export default function Navbar() {
 
   return (
     <>
-      {/* NAVBAR UTAMA: Menggunakan absolute di mobile maupun desktop agar gambar background di belakangnya bisa full ke atas */}
-      <nav className="absolute top-0 left-0 w-full bg-transparent md:bg-white md:border-b md:border-gray-100 z-45 px-6 py-4 md:px-12">
-        <div className="w-full flex items-center justify-between">
+      {/* NAVBAR UTAMA */}
+      {/* Di mobile absolute (melayang), di desktop relative (tidak memotong background) */}
+      <nav className="absolute md:relative top-0 left-0 w-full bg-transparent md:bg-[#e6e2cf] md:border-b md:border-[#e6e2cf] z-45 px-6 py-4 md:py-6">
+        
+        {/* Container pembatas lebar desktop. md:px-52 HANYA jalan di desktop, mobile aman pakai full width */}
+        <div className="w-full flex items-center justify-between md:max-w-7xl md:mx-auto md:px-12">
           
-          {/* Sisi Kiri: Logo */}
+          {/* SISI KIRI: Logo (Aman di pojok kiri) */}
           <div className="flex items-center">
             <a href="/">
               <img 
@@ -27,19 +30,7 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Sisi Kanan: Tombol Hamburger (Mobile) */}
-          <div className="md:hidden">
-            <button 
-              onClick={() => setIsOpen(true)} 
-              className="text-white focus:outline-none p-2"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          </div>
-
-          {/* Menu Navigasi Desktop */}
+          {/* SISI TENGAH-KANAN (DESKTOP): Menu Navigasi biasa */}
           <div className="hidden md:flex items-center space-x-8 text-sm font-medium">
             <a href="/events" className="text-black font-bold relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black">
               Events
@@ -48,6 +39,31 @@ export default function Navbar() {
             <a href="/standings" className="text-gray-500 hover:text-black transition-colors duration-200 pb-2">Standings</a>
             <a href="/community" className="text-gray-500 hover:text-black transition-colors duration-200 pb-2">Community</a>
           </div>
+
+          {/* SISI KANAN (DESKTOP): Tombol Register */}
+          <div className="hidden md:block">
+            <a 
+              href="/regist" 
+              className="bg-[#2d391f] text-[#e6e2cf] px-5 py-2.5 rounded-md text-sm font-semibold hover:bg-[#5a8c35] transition-colors duration-200"
+            >
+              Register
+            </a>
+          </div>
+
+          {/* SISI KANAN (MOBILE): Tombol Hamburger Mandiri */}
+          {/* Karena posisinya sejajar di container utama, flex 'justify-between' akan memaksanya berada di pojok kanan layar hp */}
+          <div className="md:hidden flex items-center">
+            <button 
+              onClick={() => setIsOpen(true)} 
+              className="text-white focus:outline-none p-2 flex items-center justify-center"
+              aria-label="Open Menu"
+            >
+              <svg className="w-6 h-6 stroke-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6H20M4 12H20M4 18H20" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
+
         </div>
       </nav>
 
@@ -57,27 +73,31 @@ export default function Navbar() {
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
+        {/* Backdrop klik luar untuk menutup */}
         <div 
           className="absolute inset-0 bg-black/40 backdrop-blur-sm" 
           onClick={() => setIsOpen(false)} 
         />
 
+        {/* Panel Sidebar */}
         <div 
           className={`absolute top-0 right-0 h-full w-[85%] sm:w-80 bg-[#0A1608] flex flex-col justify-between p-8 transition-transform duration-300 ease-in-out ${
             isOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
+          {/* Tombol Close (X) */}
           <div className="flex justify-end">
             <button 
               onClick={() => setIsOpen(false)} 
               className="text-white/70 hover:text-white p-2 focus:outline-none"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
 
+          {/* Menu internal */}
           <div className="flex flex-col space-y-6 text-4xl font-black tracking-wide uppercase my-auto pl-4">
             <a href="/events" className="text-[#76B947] hover:opacity-80 transition-opacity">Event</a>
             <a href="/maps" className="text-white hover:opacity-80 transition-opacity">Maps</a>
