@@ -54,7 +54,7 @@ export default function Home() {
         </div>
 
         {/* 3. Teks Deskripsi / Tagline */}
-        <div className="text-white max-w-xl space-y-1 mb-8 pl-2">
+        <div className="text-white max-w-xl space-y-1 mb-8 md:pl-9">
           <p className="text-sm sm:text-base font-light tracking-wide leading-relaxed opacity-90">
             Step into the ultimate running experience with Runnersty.
           </p>
@@ -67,7 +67,7 @@ export default function Home() {
         </div>
 
         {/* 4. Tombol Aksi (Call to Action - Membulat Sempurna sesuai image_d82cf2.jpg) */}
-        <div className="flex flex-row items-center gap-4 pl-2">
+        <div className="flex flex-row items-center gap-4 pl-9">
           {/* Tombol Register Now */}
           <button className="bg-[#2D391F] hover:bg-[#40522c] text-[#e6e2cf] font-semibold py-2.5 px-6 rounded-lg flex items-center gap-2 transition duration-300 text-sm sm:text-base shadow-md">
             Register Now <span className="text-xs">➔</span>
