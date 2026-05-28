@@ -8,6 +8,7 @@ module.exports = {
       fontFamily: {
         sora: ['Sora', 'sans-serif'],
         hanken: ['Hanken Grotesk', 'sans-serif'],
+        pirata: ['Pirata One', 'cursive'],
       },},
   },
   plugins: [],

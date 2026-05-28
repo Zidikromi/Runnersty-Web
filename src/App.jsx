@@ -4,6 +4,10 @@ import Navbar from './components/navbar';
 import Home from './components/home';
 import RaceStats from './components/racestats';
 import TrailArchitecture from './components/trailarchitecture';
+import CourseMap from './components/coursemap';
+import Timeline from './components/timeline';
+import Testimonials from './components/testimonials';
+import Register from './components/register';
 
 function App() {
   return (
@@ -18,6 +22,10 @@ function App() {
       <Home />
       <RaceStats />
       <TrailArchitecture />
+      <CourseMap />
+      <Timeline />
+      <Testimonials />
+      <Register />
       {/* Contoh jika nanti countdown mau diaktifkan, beri posisi absolute/fixed agar tidak merusak layout background */}
       {/* <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 text-white">
         <Countdown date={new Date('2026-05-27T23:59:59')} />
