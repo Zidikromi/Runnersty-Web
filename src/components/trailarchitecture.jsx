@@ -25,7 +25,7 @@ export default function TrailArchitecture() {
       <div className="max-w-6xl mx-auto">
 
         {/* Label */}
-        <p className="text-[11px] md:text-[13px] font-hanken font-bold tracking-[0.2em] uppercase text-[#2d3b26] opacity-60 mb-3">
+        <p className="text-[11px] md:text-[13px] font-hanken tracking-[0.2em] uppercase text-[#2d3b26] opacity-60 mb-3">
           The Trail Architecture
         </p>
 
