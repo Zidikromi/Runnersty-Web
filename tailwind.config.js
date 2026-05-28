@@ -9,6 +9,7 @@ module.exports = {
         sora: ['Sora', 'sans-serif'],
         hanken: ['Hanken Grotesk', 'sans-serif'],
         bricked: ['Bricked', 'sans-serif'],
+        pirata: ['Pirata One', 'cursive'],
       },},
   },
   plugins: [],
