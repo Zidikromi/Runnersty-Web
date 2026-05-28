@@ -45,7 +45,7 @@ export default function Home() {
         </div>
 
         {/* 2. Logo Utama "RUNNERSTY" (Putih Besar) */}
-        <div className="w-full mb-6">
+        <div className="w-full -mb-6 md:mb-6">
           <img 
             src={RunnerstyLogoatas} 
             alt="Runnersty Logo" 
@@ -54,7 +54,7 @@ export default function Home() {
         </div>
 
         {/* 3. Teks Deskripsi / Tagline */}
-        <div className="text-white max-w-xl space-y-1 mb-8 md:pl-9">
+        <div className="text-white max-w-xl space-y-1 mb-4 md:mb-6 md:pl-9">
           <p className="text-sm sm:text-base font-light tracking-wide leading-relaxed opacity-90">
             Step into the ultimate running experience with Runnersty.
           </p>
@@ -66,18 +66,18 @@ export default function Home() {
           </p>
         </div>
 
-        {/* 4. Tombol Aksi (Call to Action - Membulat Sempurna sesuai image_d82cf2.jpg) */}
-        <div className="flex flex-row items-center gap-4 pl-9">
-          {/* Tombol Register Now */}
-          <button className="bg-[#2D391F] hover:bg-[#40522c] text-[#e6e2cf] font-semibold py-2.5 px-6 rounded-lg flex items-center gap-2 transition duration-300 text-sm sm:text-base shadow-md">
-            Register Now <span className="text-xs">➔</span>
-          </button>
 
-          {/* Tombol View Route */}
-          <button className="bg-transparent hover:bg-white/10 text-white font-medium py-2.5 px-6 rounded-lg border border-[#D9D2C9]/60 transition duration-300 text-sm sm:text-base">
-            View Route
-          </button>
-        </div>
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto md:pl-9">
+  {/* Tombol Register Now */}
+  <button className="bg-[#2D391F] hover:bg-[#40522c] text-[#e6e2cf] font-semibold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition duration-300 text-sm sm:text-base shadow-md w-full sm:w-auto">
+    Register Now <span className="text-xs">➔</span>
+  </button>
+
+  {/* Tombol View Route */}
+  <button className="bg-transparent hover:bg-white/10 text-white font-medium py-3 px-6 rounded-lg border border-[#D9D2C9]/60 transition duration-300 text-sm sm:text-base text-center w-full sm:w-auto">
+    View Route
+  </button>
+</div>
 
       </div>
 
