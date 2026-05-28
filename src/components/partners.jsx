@@ -1,6 +1,5 @@
 import React from 'react';
 import Marquee from 'react-fast-marquee';
-import chanaya from '../Asset/Chanayalogo.avif'; // Contoh logo supporter, ganti dengan yang asli nanti
 
 export default function Partners() {
   // 1. Definisikan list sponsor asli kamu di sini (contoh ada 5 logo)
@@ -49,7 +48,7 @@ export default function Partners() {
             Supported By
           </span>
           <div className="w-12 h-12 flex items-center justify-center text-[#2B3E2A]">
-            <img src={chanaya} alt="Supporter Logo" className="max-w-full max-h-full object-contain" />
+            <span className="text-[#2B3E2A] font-bold text-sm">SRC</span>
           </div>
         </div>
       </div>
