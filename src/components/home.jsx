@@ -20,8 +20,7 @@ export default function Home() {
     >
       
       {/* Container Utama Konten (Posisinya di tengah layar, tapi teks rata kiri) */}
-      <div className="w-full flex flex-col items-start justify-center z-10 mt-16 md:mt-2 px-12 md:px-20">
-        
+<div className="w-full mx-auto flex flex-col items-start justify-center z-10 mt-16 md:mt-2 px-12 md:px-32">        
         {/* 1. Sisi Atas Logo Utama: Logo Sponsor & Partner (Kombinasi Kahf, SRC, dll sesuai gambar) */}
         <div className="flex items-center gap-5 pl-2 -mb-5 md:pl-10 md:mb-3">
           {/* Logo Kahf */}
