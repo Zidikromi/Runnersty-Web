@@ -31,7 +31,7 @@ export default function TrailArchitecture() {
 
         {/* Heading + Subtitle */}
         <div className="flex flex-col gap-4 mb-10">
-          <h2 className="font-sora font-extrabold text-[40px] md:text-[56px] leading-tight uppercase text-[#1e2d16] max-w-sm">
+          <h2 className="font-carsenz font-bold text-[40px] md:text-[56px] leading-tight uppercase text-[#1e2d16] max-w-sm">
             Semi Trail<br />Architecture
           </h2>
           <p className="font-hanken text-[14px] md:text-[15px] text-[#2d3b26] leading-relaxed opacity-80">

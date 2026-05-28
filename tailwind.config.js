@@ -10,6 +10,7 @@ module.exports = {
         hanken: ['Hanken Grotesk', 'sans-serif'],
         bricked: ['Bricked', 'sans-serif'],
         pirata: ['Pirata One', 'cursive'],
+        carsenz: ['Carsenz', 'sans-serif'],
       },},
   },
   plugins: [],

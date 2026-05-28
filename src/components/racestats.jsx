@@ -10,7 +10,7 @@ export default function RaceStats() {
           </span>
           <div className="flex items-baseline font-bold leading-none font-sora">
             <span className="text-[56px] md:text-[72px]">5,5</span>
-            <span className="text-[28px] md:text-[36px] ml-1 self-start pt-2 md:pt-3">K</span>
+            <span className="text-[28px] md:text-[36px] ml-1  md:pt-3">K</span>
           </div>
         </div>
 
