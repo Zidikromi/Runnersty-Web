@@ -3,6 +3,7 @@ import background from '../Asset/bg.jpeg';
 import RunnerstyLogoatas from '../Asset/RunnerstyLogoWhite.png';
 import logoChanaya from '../Asset/Chanayalogo.avif';
 import logoKahf from '../Asset/logokahf.png';
+import logoSrc from '../Asset/srclogo.png';
 
 // Pastikan Anda mengimpor logo sponsor yang sesuai jika ada file gambarnya, 
 // Di sini saya asumsikan atau sediakan struktur layout-nya agar presisi sesuai image_d82cf2.jpg
@@ -31,7 +32,7 @@ export default function Home() {
           />
           {/* Logo SRC */}
           <img 
-            src={logoChanaya} 
+            src={logoSrc} 
             alt="SRC Logo" 
             className="h-10 sm:h-14 w-auto object-contain brightness-0 invert" 
           />
