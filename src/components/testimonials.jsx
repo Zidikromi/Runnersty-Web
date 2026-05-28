@@ -39,7 +39,7 @@ export default function Testimonials() {
     <section className="w-full bg-[#e8e4d4] py-14 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
 
-        <h2 className="font-pirata text-[36px] md:text-[48px] text-center text-[#1e2d16] mb-10">
+        <h2 className="font-carsenz text-[36px] md:text-[48px] text-center text-[#2d3a20] mb-10">
           Voices From The Trail
         </h2>
 
@@ -49,7 +49,7 @@ export default function Testimonials() {
 
               <Stars count={r.stars} />
 
-              <p className="font-hanken text-[13px] text-[#2d3b26] opacity-80 leading-relaxed flex-1">
+              <p className="font-hanken text-[13px] text-[#2d3a20] opacity-80 leading-relaxed flex-1">
                 "{r.text}"
               </p>
 
@@ -58,8 +58,8 @@ export default function Testimonials() {
                   <span className="font-sora font-bold text-[11px] text-[#1e2d16]">{r.initials}</span>
                 </div>
                 <div>
-                  <p className="font-hanken font-bold text-[13px] text-[#1e2d16]">{r.name}</p>
-                  <p className="font-hanken text-[11px] text-[#2d3b26] opacity-50">Runnersty Participant</p>
+                  <p className="font-hanken font-bold text-[13px] text-[#2d3a20]">{r.name}</p>
+                  <p className="font-hanken text-[11px] text-[#2d3a20] opacity-50">Runnersty Participant</p>
                 </div>
               </div>
 

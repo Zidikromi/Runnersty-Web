@@ -10,7 +10,7 @@ export default function RaceStats() {
           </span>
           <div className="flex items-baseline font-bold leading-none font-sora">
             <span className="text-[56px] md:text-[72px]">5,5</span>
-            <span className="text-[28px] md:text-[36px] ml-1 self-start pt-2 md:pt-3">K</span>
+            <span className="text-[28px] md:text-[36px] ml-1  md:pt-3">K</span>
           </div>
         </div>
 
@@ -26,19 +26,20 @@ export default function RaceStats() {
         </div>
 
         {/* DATE */}
-        <div className="flex flex-col items-start text-[#ece9d8]">
+        <div className="flex flex-col items-start  text-[#ece9d8]">
           <span className="text-[12px] md:text-[14px] font-hanken font-bold tracking-wider uppercase opacity-80 ">
             Date
           </span>
           <div className="flex items-baseline font-bold leading-none font-sora">
-            <span className="text-[56px] md:text-[72px] tracking-tight whitespace-nowrap">
+            <span className="text-[46px] md:text-[72px] tracking-tight whitespace-nowrap">
               AUG 16
             </span>
+            
           </div>
         </div>
 
         {/* LOCATION */}
-        <div className="flex flex-col items-start text-[#ece9d8]">
+        <div className="flex flex-col items-start text-[#ece9d8] md:pl-12">
           <span className="text-[12px] md:text-[14px] font-hanken font-bold tracking-wider uppercase opacity-80 ">
             Location
           </span>

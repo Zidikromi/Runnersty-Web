@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logoHijau from '../Asset/logopolos.png'; 
+import logoHijau from '../Asset/LogoHijau.png'; 
 import logoPutih from '../Asset/LogoPutih.png'; 
 
 export default function Navbar() {
@@ -7,27 +7,29 @@ export default function Navbar() {
 
   return (
     <>
-      {/* NAVBAR UTAMA */}
-      {/* Di mobile absolute (melayang), di desktop relative (tidak memotong background) */}
-      <nav className="absolute md:relative top-0 left-0 w-full z-50 bg-transparent md:bg-[#e6e2cf] md:border-b md:border-[#e6e2cf] z-45 px-6 py-4 md:py-6">
-        
-        {/* Container pembatas lebar desktop. md:px-52 HANYA jalan di desktop, mobile aman pakai full width */}
-        <div className="w-full flex items-center justify-between md:max-w-7xl md:mx-auto md:px-12">
-          
-          {/* SISI KIRI: Logo (Aman di pojok kiri) */}
+      <nav className="absolute h-[97px] md:relative top-0 left-0 w-full z-50 bg-transparent md:bg-[#e6e2cf] md:border-b md:border-[#e6e2cf] z-45 px-6 py-4 md:py-6">
+    <div className="w-full flex items-center justify-between  mx-auto  md:px-48">
+
           <div className="flex items-center">
-            <a href="/">
-              <img 
-                src={logoPutih} 
-                alt="Runnersty Logo Mobile" 
-                className="h-10 w-auto object-contain md:hidden" 
-              />
-              <img 
-                src={logoHijau} 
-                alt="Runnersty Logo Desktop" 
-                className="h-10 w-auto object-contain hidden md:block" 
-              />
-            </a>
+   
+              {/* Logo Putih Mobile */}
+             <div className="md:hidden h-[40px] w-[120px] relative overflow-hidden">
+      <img 
+        src={logoPutih} 
+        alt="Runnersty Logo Mobile" 
+        className="absolute inset-0 w-full h-full object-cover scale-100" 
+      />
+    </div>
+              
+              {/* Logo Hijau Desktop - DIKUNCI DI CONTAINER UTAMANYA */}
+              <div className="hidden md:block h-[56px] w-[168px] relative overflow-hidden">
+                <img 
+                  src={logoHijau} 
+                  alt="Runnersty Logo Desktop" 
+                  className="absolute inset-0 w-full h-full object-cover scale-100" 
+                />
+              </div>
+    
           </div>
 
           {/* SISI TENGAH-KANAN (DESKTOP): Menu Navigasi biasa */}

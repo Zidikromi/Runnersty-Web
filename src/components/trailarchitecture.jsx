@@ -25,13 +25,13 @@ export default function TrailArchitecture() {
       <div className="max-w-6xl mx-auto">
 
         {/* Label */}
-        <p className="text-[11px] md:text-[13px] font-hanken font-bold tracking-[0.2em] uppercase text-[#2d3b26] opacity-60 mb-3">
+        <p className="text-[11px] md:text-[13px] font-hanken tracking-[0.2em] uppercase text-[#2d3b26] opacity-60 mb-3">
           The Trail Architecture
         </p>
 
         {/* Heading + Subtitle */}
         <div className="flex flex-col gap-4 mb-10">
-          <h2 className="font-sora font-extrabold text-[40px] md:text-[56px] leading-tight uppercase text-[#1e2d16] max-w-sm">
+          <h2 className="font-carsenz font-bold text-[40px] md:text-[56px] leading-tight uppercase text-[#1e2d16] max-w-sm">
             Semi Trail<br />Architecture
           </h2>
           <p className="font-hanken text-[14px] md:text-[15px] text-[#2d3b26] leading-relaxed opacity-80">

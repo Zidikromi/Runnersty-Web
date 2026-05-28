@@ -47,11 +47,11 @@ export default function CourseMap() {
         {/* LEFT: Text content */}
         <div className="flex-1 flex flex-col gap-5">
 
-          <p className="text-[11px] md:text-[13px] font-hanken font-bold tracking-[0.2em] uppercase text-[#ece9d8] opacity-60">
+          <p className="text-[11px] md:text-[13px] font-sora font-bold tracking-[0.2em] uppercase text-[#ece9d8] opacity-60">
             Technical Overview
           </p>
 
-          <h2 className="font-sora font-extrabold text-[44px] md:text-[60px] leading-none uppercase text-[#ece9d8]">
+          <h2 className="font-carsenz text-[44px] md:text-[60px] leading-none uppercase text-[#ece9d8]">
             The Course<br />Map
           </h2>
 

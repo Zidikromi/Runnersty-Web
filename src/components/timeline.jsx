@@ -31,7 +31,7 @@ export default function Timeline() {
 
       {/* Decorative vertical RUNNERSTY text */}
       <div
-        className="absolute right-0 top-0 h-full flex items-center justify-center font-pirata text-[64px] md:text-[80px] text-[#c9b96e] opacity-30 select-none pointer-events-none tracking-widest pr-1"
+        className="absolute right-0 top-0 h-full flex items-center justify-center font-carsenz text-[64px] md:text-[80px] text-[#c9b96e] opacity-30 select-none pointer-events-none tracking-widest pr-1"
         style={{ writingMode: 'vertical-rl' }}
       >
         RUNNERSTY
@@ -41,10 +41,10 @@ export default function Timeline() {
 
         {/* Heading */}
         <div className="text-center mb-3">
-          <h2 className="font-pirata text-[36px] md:text-[52px] leading-tight text-[#1e2d16]">
+          <h2 className="font-carsenz  text-[36px] md:text-[52px] leading-tight text-[#2d3a20]">
             Recreational<br />Fun Semi-Trail Run
           </h2>
-          <p className="font-hanken text-[14px] md:text-[16px] text-[#2d3b26] opacity-60 mt-3">
+          <p className="font-hanken text-[14px] md:text-[16px] text-[#2d3a20] opacity-60 mt-3">
             The rhythm of the race. Every second accounted for from dawn till dusk.
           </p>
         </div>
@@ -68,8 +68,8 @@ export default function Timeline() {
                 <div className="w-1/2 pr-8 flex justify-end">
                   {ev.align === 'left' ? (
                     <div className="text-right">
-                      <p className="font-hanken font-bold text-[18px] md:text-[22px] text-[#1e2d16]">{ev.title}</p>
-                      <p className="font-hanken text-[14px] md:text-[15px] text-[#2d3b26] opacity-55 mt-0.5 max-w-[200px]">{ev.desc}</p>
+                      <p className="font-hanken font-bold text-[18px] md:text-[22px] text-[#2d3a20]">{ev.title}</p>
+                      <p className="font-hanken text-[14px] md:text-[15px] text-[#2d3a20] opacity-55 mt-0.5 max-w-[200px]">{ev.desc}</p>
                     </div>
                   ) : (
                     <p className="font-hanken font-bold text-[20px] md:text-[24px] text-[#1e2d16]">{ev.time}</p>

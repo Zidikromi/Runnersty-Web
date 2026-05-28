@@ -21,7 +21,7 @@ export default function Register() {
 
         {/* Get In Touch */}
         <div className="flex flex-col items-center gap-3">
-          <h2 className="font-pirata text-[36px] md:text-[44px] text-[#1e2d16]">
+          <h2 className="font-carsenz text-[36px] md:text-[44px] text-[#1e2d16]">
             Get In Touch
           </h2>
           <a
@@ -44,7 +44,7 @@ export default function Register() {
           <WaveDecor />
 
           <div className="relative z-10 flex flex-col items-center gap-4">
-            <h3 className="font-pirata text-[40px] md:text-[56px] leading-tight text-[#ece9d8]">
+            <h3 className="font-carsenz text-[40px] md:text-[56px] leading-tight text-[#ece9d8]">
               Register Now,<br />Limited Slot!
             </h3>
             <p className="font-hanken text-[13px] md:text-[14px] text-[#ece9d8] opacity-60 max-w-sm leading-relaxed">
