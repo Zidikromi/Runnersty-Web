@@ -1,6 +1,8 @@
 import React from 'react';
 import Marquee from 'react-fast-marquee';
-import chanaya from '../Asset/Chanayalogo.avif'; // Contoh logo supporter, ganti dengan yang asli nanti
+import logoKahf from '../Asset/logokahf.png'; 
+import logoSrc from '../Asset/srclogo.png';
+import chanaya from '../Asset/Chanayalogo.avif'; 
 
 export default function Partners() {
   // 1. Definisikan list sponsor asli kamu di sini (contoh ada 5 logo)
@@ -17,18 +19,16 @@ export default function Partners() {
   const infiniteSponsors = [...baseSponsors, ...baseSponsors, ...baseSponsors];
 
   return (
-    <div className="w-full bg-[#EAE3C9] py-16 flex flex-col items-center font-sans overflow-hidden">
+    <div className="w-full bg-[#baa578] py-16 flex flex-col items-center font-sans overflow-hidden">
       
-      {/* SECTION 1: POWERED, ORGANIZED, SUPPORTED */}
+  
       <div className="grid grid-cols-3 gap-8 max-w-4xl w-full text-center items-start mb-14 px-4">
-        {/* Powered By */}
+  
         <div className="flex flex-col items-center">
           <span className="text-[10px] tracking-widest text-[#2B3E2A] font-bold uppercase mb-4">
             Powered By
           </span>
-          <span className="text-3xl font-light text-[#2B3E2A] tracking-wide">
-            Kahf
-          </span>
+          <img src={logoKahf} alt="Kahf Logo" className="h-10 sm:h-14 w-auto object-contain brightness-0 invert" />
         </div>
 
         {/* Organized By */}
@@ -36,11 +36,7 @@ export default function Partners() {
           <span className="text-[10px] tracking-widest text-[#2B3E2A] font-bold uppercase mb-4">
             Organized By
           </span>
-          <div className="w-12 h-12 flex items-center justify-center text-[#2B3E2A]">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-10 h-10">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 3v1.5M3 21v-6m0 0l2.77-.693a9 9 0 016.208.682l.108.054a9 9 0 006.086.71l3.114-.732a4.873 4.873 0 003.713-4.735V5.105a2.25 2.25 0 00-2.634-2.217l-3.235.647a9 9 0 01-5.114-.492l-.125-.056a9 9 0 00-6.196-.653L3 4.5m0 10.5V4.5" />
-            </svg>
-          </div>
+          <img src={logoSrc} alt="SRC Logo" className="h-10 sm:h-14 w-auto object-contain brightness-0 invert" />
         </div>
 
         {/* Supported By */}
@@ -49,7 +45,7 @@ export default function Partners() {
             Supported By
           </span>
           <div className="w-12 h-12 flex items-center justify-center text-[#2B3E2A]">
-            <img src={chanaya} alt="Supporter Logo" className="max-w-full max-h-full object-contain" />
+            <img src={chanaya} alt="Chanaya Logo" className="h-10 sm:h-14 w-auto object-contain brightness-0 invert" />
           </div>
         </div>
       </div>
