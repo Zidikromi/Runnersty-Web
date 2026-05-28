@@ -67,7 +67,7 @@ export default function Home() {
         </div>
 
 
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto md:pl-9">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto md:pl-9 hidden">
   {/* Tombol Register Now */}
   <button className="bg-[#2D391F] hover:bg-[#40522c] text-[#e6e2cf] font-semibold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition duration-300 text-sm sm:text-base shadow-md w-full sm:w-auto">
     Register Now <span className="text-xs">➔</span>
