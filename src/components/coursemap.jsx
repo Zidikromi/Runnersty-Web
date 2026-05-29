@@ -1,5 +1,4 @@
 import bg1 from '../Asset/bg1.jpeg';
-import logoputih from '../Asset/LogoPutih.png';
 import runnerstyLogoWhite from '../Asset/RunnerstyLogoWhite.png';
 import logokahf from '../Asset/logokahf.png';
 import srclogo from '../Asset/srclogo.png';
