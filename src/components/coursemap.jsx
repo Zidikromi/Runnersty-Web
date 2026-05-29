@@ -41,19 +41,13 @@ export default function CourseMap() {
   return (
     <section className="w-full bg-[#1e2d16] py-14 px-6 md:px-12 overflow-hidden relative">
 
-      {/* Decorative background mark */}
       <div className="absolute -bottom-16 -left-28 w-[200px] h-[200px] md:w-[320px] md:h-[320px] opacity-10 pointer-events-none select-none">
         <img src={runnerstyLogoWhite} alt="" className="w-full h-full object-contain" />
       </div>
 
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 relative z-10">
 
-        {/* LEFT: Text content */}
         <div className="flex-1 flex flex-col gap-5">
-
-          {/* <p className="text-[11px] md:text-[13px] font-sora font-bold tracking-[0.2em] uppercase text-[#ece9d8] opacity-60">
-            Technical Overview
-          </p> */}
 
           <h2 className="uppercase font-carsenz text-[70px] md:text-[72px] leading-none  text-[#E8E2D0]">
             The Course<br />Map
