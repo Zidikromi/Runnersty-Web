@@ -4,7 +4,7 @@ import logoHijau from '../Asset/LogoHijau.png';
 export default function Footer() {
   return (
 
-    <footer className="w-full  h-[150px] bg-[#EBE4D1] px-16 flex items-center justify-between font-sora text-black ">
+    <footer className="w-full  h-[150px] bg-[#E8E2D0] px-16 flex items-center justify-between font-sora text-black ">
 
       <div className="flex flex-col items-start gap-2">
       <div className=" md:block h-[56px] w-[168px] relative overflow-hidden">

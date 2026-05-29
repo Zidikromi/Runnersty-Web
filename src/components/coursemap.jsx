@@ -47,15 +47,15 @@ export default function CourseMap() {
         {/* LEFT: Text content */}
         <div className="flex-1 flex flex-col gap-5">
 
-          <p className="text-[11px] md:text-[13px] font-sora font-bold tracking-[0.2em] uppercase text-[#ece9d8] opacity-60">
+          <p className="text-[11px] md:text-[13px] font-sora font-bold tracking-[0.2em] uppercase text-[#E8E2D0] opacity-60">
             Technical Overview
           </p>
 
-          <h2 className="font-carsenz text-[44px] md:text-[60px] leading-none uppercase text-[#ece9d8]">
+          <h2 className="font-carsenz text-[44px] md:text-[60px] leading-none uppercase text-[#E8E2D0]">
             The Course<br />Map
           </h2>
 
-          <p className="font-hanken text-[13px] md:text-[14px] text-[#ece9d8] opacity-70 leading-relaxed max-w-sm">
+          <p className="font-hanken text-[13px] md:text-[14px] text-[#E8E2D0] opacity-70 leading-relaxed max-w-sm">
             Power through 5 kilometers of dynamic, mixed terrain. From the fast-paced
             stretches of raw nature to the rugged, uneven dirt sections that demand your
             focus, every segment is an adventurous sprint designed to test your agility
@@ -64,7 +64,7 @@ export default function CourseMap() {
 
           <div className="flex flex-col gap-4 mt-2">
             {infoItems.map((item) => (
-              <div key={item.label} className="flex items-start gap-3 text-[#ece9d8]">
+              <div key={item.label} className="flex items-start gap-3 text-[#E8E2D0]">
                 <span className="opacity-70">{item.icon}</span>
                 <div>
                   <p className="font-hanken font-semibold text-[13px] md:text-[14px] leading-tight">

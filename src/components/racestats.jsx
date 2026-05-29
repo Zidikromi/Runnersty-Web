@@ -4,7 +4,7 @@ export default function RaceStats() {
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 items-center">
         
         {/* DISTANCE */}
-        <div className="flex flex-col items-start text-[#ece9d8]">
+        <div className="flex flex-col items-start text-[#E8E2D0]">
           <span className="text-[12px] md:text-[14px] font-hanken font-bold tracking-wider uppercase opacity-80 ">
             Distance
           </span>
@@ -15,7 +15,7 @@ export default function RaceStats() {
         </div>
 
         {/* ELEVATION GAIN */}
-        <div className="flex flex-col items-start text-[#ece9d8]">
+        <div className="flex flex-col items-start text-[#E8E2D0]">
           <span className="text-[12px] md:text-[14px] font-hanken font-bold tracking-wider uppercase opacity-80">
             Elevation Gain
           </span>
@@ -26,7 +26,7 @@ export default function RaceStats() {
         </div>
 
         {/* DATE */}
-        <div className="flex flex-col items-start  text-[#ece9d8]">
+        <div className="flex flex-col items-start  text-[#E8E2D0]">
           <span className="text-[12px] md:text-[14px] font-hanken font-bold tracking-wider uppercase opacity-80 ">
             Date
           </span>
@@ -39,7 +39,7 @@ export default function RaceStats() {
         </div>
 
         {/* LOCATION */}
-        <div className="flex flex-col items-start text-[#ece9d8] md:pl-12">
+        <div className="flex flex-col items-start text-[#E8E2D0] md:pl-12">
           <span className="text-[12px] md:text-[14px] font-hanken font-bold tracking-wider uppercase opacity-80 ">
             Location
           </span>
