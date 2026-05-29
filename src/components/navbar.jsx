@@ -13,7 +13,7 @@ export default function Navbar() {
           <div className="flex items-center">
    
               {/* Logo Putih Mobile */}
-             <div className="md:hidden h-[40px] w-[120px] relative overflow-hidden">
+      <div className="md:hidden h-[40px] w-[120px] relative overflow-hidden">
       <img 
         src={logoPutih} 
         alt="Runnersty Logo Mobile" 

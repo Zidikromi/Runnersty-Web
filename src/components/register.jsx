@@ -25,7 +25,7 @@ export default function Register() {
             Get In Touch
           </h2>
           <a
-            href="https://www.instagram.com/runnersty"
+            href="https://www.instagram.com/runnersty.id/"
             target="_blank"
             rel="noreferrer"
             className="flex flex-col items-center gap-1 text-[#1e2d16] hover:opacity-70 transition-opacity"
