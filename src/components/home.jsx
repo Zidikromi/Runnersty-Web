@@ -5,8 +5,6 @@ import logoChanaya from '../Asset/Chanayalogo.avif';
 import logoKahf from '../Asset/logokahf.png';
 import logoSrc from '../Asset/srclogo.png';
 
-// Pastikan Anda mengimpor logo sponsor yang sesuai jika ada file gambarnya, 
-// Di sini saya asumsikan atau sediakan struktur layout-nya agar presisi sesuai image_d82cf2.jpg
 export default function Home() {
   return (
     <div 
@@ -20,23 +18,19 @@ export default function Home() {
       className="w-full h-screen bg-cover bg-center flex flex-col justify-center items-center px-6 md:px-12 relative overflow-hidden"
     >
       
-      {/* Container Utama Konten (Posisinya di tengah layar, tapi teks rata kiri) */}
 <div className="w-full mx-auto flex flex-col items-start justify-center z-10 mt-16 md:mt-2 px-12 md:px-32">        
-        {/* 1. Sisi Atas Logo Utama: Logo Sponsor & Partner (Kombinasi Kahf, SRC, dll sesuai gambar) */}
+
         <div className="flex items-center gap-5 pl-2 -mb-5 md:pl-10 md:mb-3">
-          {/* Logo Kahf */}
           <img 
             src={logoKahf} 
             alt="Kahf Logo" 
             className="h-10 sm:h-14 w-auto object-contain brightness-0 invert" 
           />
-          {/* Logo SRC */}
           <img 
             src={logoSrc} 
             alt="SRC Logo" 
             className="h-10 sm:h-14 w-auto object-contain brightness-0 invert" 
           />
-          {/* Logo Partner 3 (Kompas/Lingkaran) */}
           <img 
             src={logoChanaya} 
             alt="Partner Logo" 
@@ -44,8 +38,7 @@ export default function Home() {
           />
         </div>
 
-        {/* 2. Logo Utama "RUNNERSTY" (Putih Besar) */}
-        <div className="w-full -mb-6 md:mb-6">
+        <div className="w-full -mb-6 sm:mb-3 md:mb-6">
           <img 
             src={RunnerstyLogoatas} 
             alt="Runnersty Logo" 
@@ -53,7 +46,6 @@ export default function Home() {
           />
         </div>
 
-        {/* 3. Teks Deskripsi / Tagline */}
         <div className="text-white max-w-xl space-y-1 mb-4 md:mb-6 md:pl-9">
           <p className="text-sm sm:text-base font-light tracking-wide leading-relaxed opacity-90">
             Step into the ultimate running experience with Runnersty.
@@ -68,7 +60,6 @@ export default function Home() {
 
 
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto md:pl-9 hidden">
-  {/* Tombol Register Now */}
   <button className="bg-[#2D391F] hover:bg-[#40522c] text-[#e6e2cf] font-semibold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition duration-300 text-sm sm:text-base shadow-md w-full sm:w-auto">
     Register Now <span className="text-xs">➔</span>
   </button>
