@@ -55,7 +55,7 @@ export default function CourseMap() {
             Technical Overview
           </p> */}
 
-          <h2 className="font-carsenz text-[70px] md:text-[72px] leading-none tracking-[0.078em] text-[#E8E2D0]">
+          <h2 className="uppercase font-carsenz text-[70px] md:text-[72px] leading-none  text-[#E8E2D0]">
             The Course<br />Map
           </h2>
 

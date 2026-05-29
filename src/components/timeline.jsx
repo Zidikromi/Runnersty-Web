@@ -27,7 +27,7 @@ const events = [
 
 export default function Timeline() {
   return (
-    <section className="w-full bg-[#e8e4d4] py-14 px-6 md:px-12 relative overflow-hidden">
+    <section className="w-full bg-[#E8E2D0] py-14 px-6 md:px-12 relative overflow-hidden">
 
       {/* Decorative vertical RUNNERSTY text */}
       <div

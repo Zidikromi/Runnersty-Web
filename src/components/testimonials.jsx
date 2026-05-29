@@ -36,7 +36,7 @@ const Stars = ({ count }) => (
 
 export default function Testimonials() {
   return (
-    <section className="w-full bg-[#e8e4d4] py-14 px-6 md:px-12">
+    <section className="w-full bg-[#E8E2D0] py-14 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
 
         <h2 className="font-carsenz text-[36px] md:text-[48px] text-center text-[#2d3a20] mb-10">

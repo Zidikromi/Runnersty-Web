@@ -7,7 +7,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="absolute h-[97px] md:relative top-0 left-0 w-full z-50 bg-transparent md:bg-[#e6e2cf] md:border-b md:border-[#e6e2cf] z-45 px-6 py-4 md:py-6">
+      <nav className="absolute h-[97px] md:relative top-0 left-0 w-full z-50 bg-transparent md:bg-[#E8E2D0] md:border-b md:border-[#e6e2cf] z-45 px-6 py-4 md:py-6">
     <div className="w-full flex items-center justify-between  mx-auto  md:px-48">
 
           <div className="flex items-center">
