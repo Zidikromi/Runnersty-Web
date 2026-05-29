@@ -1,5 +1,9 @@
 import bg1 from '../Asset/bg1.jpeg';
 import logoputih from '../Asset/LogoPutih.png';
+import runnerstyLogoWhite from '../Asset/RunnerstyLogoWhite.png';
+import logokahf from '../Asset/logokahf.png';
+import srclogo from '../Asset/srclogo.png';
+import chanayalogo from '../Asset/Chanayalogo.avif';
 
 const infoItems = [
   {
@@ -38,8 +42,8 @@ export default function CourseMap() {
     <section className="w-full bg-[#1e2d16] py-14 px-6 md:px-12 overflow-hidden relative">
 
       {/* Decorative background mark */}
-      <div className="absolute -bottom-6 -left-6 w-48 h-48 md:w-72 md:h-72 opacity-10 pointer-events-none select-none">
-        <img src={logoputih} alt="" className="w-full h-full object-contain" />
+      <div className="absolute -bottom-16 -left-28 w-[200px] h-[200px] md:w-[320px] md:h-[320px] opacity-10 pointer-events-none select-none">
+        <img src={runnerstyLogoWhite} alt="" className="w-full h-full object-contain" />
       </div>
 
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 relative z-10">
@@ -47,15 +51,15 @@ export default function CourseMap() {
         {/* LEFT: Text content */}
         <div className="flex-1 flex flex-col gap-5">
 
-          <p className="text-[11px] md:text-[13px] font-sora font-bold tracking-[0.2em] uppercase text-[#ece9d8] opacity-60">
+          {/* <p className="text-[11px] md:text-[13px] font-sora font-bold tracking-[0.2em] uppercase text-[#ece9d8] opacity-60">
             Technical Overview
-          </p>
+          </p> */}
 
-          <h2 className="font-carsenz text-[44px] md:text-[60px] leading-none uppercase text-[#ece9d8]">
+          <h2 className="font-carsenz text-[70px] md:text-[72px] leading-none tracking-[0.078em] text-[#E8E2D0]">
             The Course<br />Map
           </h2>
 
-          <p className="font-hanken text-[13px] md:text-[14px] text-[#ece9d8] opacity-70 leading-relaxed max-w-sm">
+          <p className="font-sora text-[13px] md:text-[14px] text-[#E8E2D0] opacity-70 leading-relaxed max-w-md text-justify">
             Power through 5 kilometers of dynamic, mixed terrain. From the fast-paced
             stretches of raw nature to the rugged, uneven dirt sections that demand your
             focus, every segment is an adventurous sprint designed to test your agility
@@ -64,13 +68,13 @@ export default function CourseMap() {
 
           <div className="flex flex-col gap-4 mt-2">
             {infoItems.map((item) => (
-              <div key={item.label} className="flex items-start gap-3 text-[#ece9d8]">
+              <div key={item.label} className="flex items-start gap-3 text-[#E8E2D0]">
                 <span className="opacity-70">{item.icon}</span>
                 <div>
-                  <p className="font-hanken font-semibold text-[13px] md:text-[14px] leading-tight">
+                  <p className="font-sora font-semibold text-[13px] md:text-[14px] leading-tight">
                     {item.label}
                   </p>
-                  <p className="font-hanken text-[12px] md:text-[13px] opacity-60 mt-0.5">
+                  <p className="font-sora text-[12px] md:text-[13px] opacity-60 mt-0.5">
                     {item.value}
                   </p>
                 </div>
@@ -86,34 +90,33 @@ export default function CourseMap() {
             className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden"
             style={{
               backgroundImage: `linear-gradient(to bottom,
-                rgba(10,22,8,0.45) 0%,
-                rgba(10,22,8,0.25) 40%,
-                rgba(10,22,8,0.65) 100%
+                rgba(10,22,8,0.5) 0%,
+                rgba(10,22,8,0.2) 35%,
+                rgba(10,22,8,0.55) 100%
               ), url(${bg1})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
           >
-            {/* Sponsor row */}
-            <div className="absolute top-5 left-5 flex items-center gap-3 text-white">
-              <span className="font-hanken font-bold text-sm tracking-wide opacity-90">Kahf</span>
-              <span className="text-[11px] border border-white/40 px-1.5 py-0.5 rounded opacity-75 font-hanken">SRC</span>
-              <span className="text-xs opacity-60">⊙</span>
-            </div>
-
-            {/* Center logo */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+            {/* Center: sponsor row + logo mark + brand name */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 -translate-y-10">
+              {/* Sponsor row - tepat di atas logo */}
+              <div className="flex items-center gap-6">
+                <img src={logokahf} alt="Kahf" className="h-16 object-contain brightness-0 invert" />
+                <img src={srclogo} alt="SRC" className="h-12 object-contain brightness-0 invert" />
+                <img src={chanayalogo} alt="Chanaya" className="h-20 w-20 object-contain rounded-full brightness-0 invert" />
+              </div>
               <img
-                src={logoputih}
-                alt="Runnersty"
-                className="w-36 md:w-44 object-contain drop-shadow-lg"
+                src={runnerstyLogoWhite}
+                alt="Runnersty mark"
+                className="w-52 md:w-64 object-contain drop-shadow-xl"
               />
             </div>
 
-            {/* Coming soon badge */}
-            <div className="absolute bottom-6 left-0 right-0 flex justify-center">
-              <span className="font-sora font-extrabold text-[18px] md:text-[22px] uppercase tracking-widest text-[#c9b96e]">
-                Coming Soon
+            {/* Coming soon */}
+            <div className="absolute bottom-12 left-0 right-0 flex justify-center">
+              <span className="font-carsenz text-[28px] md:text-[36px] tracking-wide text-[#ffffff] drop-shadow-md ">
+                COMING SOON
               </span>
             </div>
           </div>
