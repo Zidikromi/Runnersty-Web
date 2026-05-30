@@ -1,11 +1,10 @@
 import React from 'react';
-import Countdown from 'react-countdown';
 import background from '../Asset/bg.jpeg';
-// import video from '../Asset/video/DJI.MP4';
 import RunnerstyLogoatas from '../Asset/RunnerstyLogoWhite.png';
 import logoChanaya from '../Asset/Chanayalogo.avif';
 import logoKahf from '../Asset/logokahf.png';
 import logoSrc from '../Asset/srclogo.png';
+import Countdown from 'react-countdown';
 
 export default function Home() {
   // Tentukan tanggal target event Anda di sini (Format: YYYY-MM-DDTHH:mm:ss)
@@ -87,22 +86,8 @@ export default function Home() {
       }} 
       className="w-full h-screen bg-cover bg-center flex flex-col justify-center items-center px-6 md:px-12 relative overflow-hidden"
     >
-
-      {/* <div className="w-full h-screen flex flex-col justify-center items-center px-6 md:px-12 relative overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        >
-          <source src={video} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video> */}
-
-        {/* <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#0a1608]/30 via-[#0a1608]/50 to-[#0a1608]/70 z-10" /> */}
-        
-      <div className="w-full mx-auto flex flex-col items-start justify-center z-10 mt-16 md:mt-2 px-12 md:px-32">        
+      
+<div className="w-full mx-auto flex flex-col items-start justify-center z-10 mt-16 md:mt-2 px-12 md:px-32">        
 
         <div className="flex items-center gap-5 pl-2 -mb-5 md:pl-10 md:mb-3">
           <img 
@@ -145,7 +130,7 @@ export default function Home() {
         <Countdown date={targetDate} renderer={renderer} />
 
   
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto md:pl-9 hidden">
+        <div className="flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto md:pl-9 hidden">
           <button className="bg-[#2D391F] hover:bg-[#40522c] text-[#e6e2cf] font-semibold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition duration-300 text-sm sm:text-base shadow-md w-full sm:w-auto">
             Register Now <span className="text-xs">➔</span>
           </button>

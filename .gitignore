@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 
+src/Asset/video/DJI.MP4
 # testing
 /coverage
 
