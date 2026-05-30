@@ -42,18 +42,9 @@ export default function Navbar() {
             <a href="/community" className="text-gray-500 hover:text-black transition-colors duration-200 pb-2">Community</a>
           </div>
 
-          {/* SISI KANAN (DESKTOP): Tombol Register */}
-          <div className="hidden md:block">
-            <a 
-              href="/regist" 
-              className="bg-[#2d391f] text-[#e6e2cf] px-5 py-2.5 rounded-md text-sm font-semibold hover:bg-[#5a8c35] transition-colors duration-200"
-            >
-              Register
-            </a>
-          </div>
+      
 
           {/* SISI KANAN (MOBILE): Tombol Hamburger Mandiri */}
-          {/* Karena posisinya sejajar di container utama, flex 'justify-between' akan memaksanya berada di pojok kanan layar hp */}
           <div className="md:hidden flex items-center">
             <button 
               onClick={() => setIsOpen(true)} 
