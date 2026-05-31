@@ -24,13 +24,13 @@ function App() {
       {/* Home akan menduduki porsi layar penuh dari ujung atas sampai bawah */}
       <Home />
       <RaceStats />
-      <Partners />
       <TrailArchitecture />
       <CourseMap />
       <Timeline />
       <RecapFoto />
       <Testimonials />
       <Register />
+      <Partners />
       
       <Footer/>
       {/* Contoh jika nanti countdown mau diaktifkan, beri posisi absolute/fixed agar tidak merusak layout background */}
