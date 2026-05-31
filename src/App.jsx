@@ -7,6 +7,7 @@ import Partners from './components/partners';
 import TrailArchitecture from './components/trailarchitecture';
 import CourseMap from './components/coursemap';
 import Timeline from './components/timeline';
+import RecapFoto from './components/recapfoto';
 import Testimonials from './components/testimonials';
 import Register from './components/register';
 import Footer from './components/footer';
@@ -26,10 +27,11 @@ function App() {
       <TrailArchitecture />
       <CourseMap />
       <Timeline />
+      <RecapFoto />
       <Testimonials />
       <Register />
-      <Partners/>
-
+      <Partners />
+      
       <Footer/>
       {/* Contoh jika nanti countdown mau diaktifkan, beri posisi absolute/fixed agar tidak merusak layout background */}
       {/* <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 text-white">

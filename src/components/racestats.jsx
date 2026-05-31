@@ -5,7 +5,7 @@ export default function RaceStats() {
         
         {/* DISTANCE */}
         <div className="flex flex-col items-start text-[#E8E2D0]">
-          <span className="text-[12px] md:text-[14px] font-hanken font-bold tracking-wider uppercase opacity-80 ">
+          <span className="text-[12px] md:text-[14px] font-sora font-bold tracking-wider uppercase opacity-80 ">
             Distance
           </span>
           <div className="flex items-baseline font-bold leading-none font-sora">
@@ -16,7 +16,7 @@ export default function RaceStats() {
 
         {/* ELEVATION GAIN */}
         <div className="flex flex-col items-start text-[#E8E2D0]">
-          <span className="text-[12px] md:text-[14px] font-hanken font-bold tracking-wider uppercase opacity-80">
+          <span className="text-[12px] md:text-[14px] font-sora font-bold tracking-wider uppercase opacity-80">
             Elevation Gain
           </span>
           <div className="flex items-baseline font-bold leading-none font-sora">
@@ -27,7 +27,7 @@ export default function RaceStats() {
 
         {/* DATE */}
         <div className="flex flex-col items-start  text-[#E8E2D0]">
-          <span className="text-[12px] md:text-[14px] font-hanken font-bold tracking-wider uppercase opacity-80 ">
+          <span className="text-[12px] md:text-[14px] font-sora font-bold tracking-wider uppercase opacity-80 ">
             Date
           </span>
           <div className="flex items-baseline font-bold leading-none font-sora">
@@ -40,7 +40,7 @@ export default function RaceStats() {
 
         {/* LOCATION */}
         <div className="flex flex-col items-start text-[#E8E2D0] md:pl-12">
-          <span className="text-[12px] md:text-[14px] font-hanken font-bold tracking-wider uppercase opacity-80 ">
+          <span className="text-[12px] md:text-[14px] font-sora font-bold tracking-wider uppercase opacity-80 ">
             Location
           </span>
           <div className="flex flex-col font-bold text-[24px] md:text-[28px] leading-tight tracking-wide uppercase font-sora">

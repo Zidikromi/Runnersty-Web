@@ -1,3 +1,8 @@
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+
 const reviews = [
   {
     name: 'Nadiya Triandini',
@@ -16,6 +21,18 @@ const reviews = [
     stars: 5,
     text: 'Salah satu race terbaik yang pernah saya ikuti. Pemandangan alam Dago Giri luar biasa dan energy crowd di garis finish benar-benar menguras emosi positif.',
     initials: 'MM',
+  },
+  {
+    name: 'Rina Salsabila',
+    stars: 5,
+    text: 'Event yang benar-benar berkesan. Organisasi rapi, rute indah, dan komunitas yang sangat supportif. Sudah tidak sabar untuk season berikutnya!',
+    initials: 'RS',
+  },
+  {
+    name: 'Budi Santoso',
+    stars: 5,
+    text: 'Pengalaman trail running terbaik yang pernah ada. Medannya seru, pemandangan memukau, dan atmosfernya luar biasa. Highly recommended!',
+    initials: 'BS',
   },
 ];
 
@@ -36,38 +53,69 @@ const Stars = ({ count }) => (
 
 export default function Testimonials() {
   return (
-    <section className="w-full bg-[#E8E2D0] py-14 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full bg-[#E8E2D0] py-14 overflow-hidden">
 
-        <h2 className="font-carsenz text-[36px] md:text-[48px] text-center text-[#2d3a20] mb-10">
+      <style>{`
+        .testimonials-swiper .swiper-slide {
+          transform: scale(0.88);
+          filter: blur(2px);
+          opacity: 0.6;
+          transition: transform 0.4s ease, filter 0.4s ease, opacity 0.4s ease;
+        }
+        .testimonials-swiper .swiper-slide-active {
+          transform: scale(1);
+          filter: blur(0px);
+          opacity: 1;
+        }
+      `}</style>
+
+      <div className="text-center mb-10 px-6">
+        <h2 className="font-carsenz text-[42px] md:text-[56px] text-[#2d3a20] uppercase tracking-tight leading-none mb-3">
           Voices From The Trail
         </h2>
+        <p className="font-sora text-[14px] md:text-[15px] text-[#2d3a20] opacity-70">
+          Real stories from runners who've been on the trail.
+        </p>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="px-6">
+        <Swiper
+          modules={[Autoplay]}
+          slidesPerView={1}
+          centeredSlides={true}
+          spaceBetween={24}
+          breakpoints={{
+            640:  { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          loop={true}
+          speed={800}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          grabCursor={true}
+          className="testimonials-swiper w-full"
+        >
           {reviews.map((r) => (
-            <div key={r.name} className="bg-white rounded-2xl p-5 flex flex-col gap-3 shadow-sm">
-
-              <Stars count={r.stars} />
-
-              <p className="font-hanken text-[13px] text-[#2d3a20] opacity-80 leading-relaxed flex-1">
-                "{r.text}"
-              </p>
-
-              <div className="flex items-center gap-3 mt-2">
-                <div className="w-9 h-9 rounded-full bg-[#c9b96e] flex items-center justify-center shrink-0">
-                  <span className="font-sora font-bold text-[11px] text-[#1e2d16]">{r.initials}</span>
-                </div>
-                <div>
-                  <p className="font-hanken font-bold text-[13px] text-[#2d3a20]">{r.name}</p>
-                  <p className="font-hanken text-[11px] text-[#2d3a20] opacity-50">Runnersty Participant</p>
+            <SwiperSlide key={r.name}>
+              <div className="bg-white rounded-2xl p-5 flex flex-col gap-3 shadow-sm">
+                <Stars count={r.stars} />
+                <p className="font-sora text-[13px] text-[#2d3a20] opacity-80 leading-relaxed flex-1">
+                  "{r.text}"
+                </p>
+                <div className="flex items-center gap-3 mt-2">
+                  <div className="w-9 h-9 rounded-full bg-[#c9b96e] flex items-center justify-center shrink-0">
+                    <span className="font-sora font-bold text-[11px] text-[#1e2d16]">{r.initials}</span>
+                  </div>
+                  <div>
+                    <p className="font-sora font-bold text-[13px] text-[#2d3a20]">{r.name}</p>
+                    <p className="font-sora text-[11px] text-[#2d3a20] opacity-50">Runnersty Participant</p>
+                  </div>
                 </div>
               </div>
-
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
-
+        </Swiper>
       </div>
+
     </section>
   );
 }
