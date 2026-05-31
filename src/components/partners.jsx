@@ -5,49 +5,87 @@ import logoSrc from '../Asset/srclogo.png';
 import chanaya from '../Asset/Chanayalogo.avif'; 
 
 export default function Partners() {
-  // 1. Definisikan list sponsor asli kamu di sini (contoh ada 5 logo)
-  const baseSponsors = [
-    { id: 1, logo: '/logo1.png', alt: 'Sponsor 1' },
-    { id: 2, logo: '/logo2.png', alt: 'Sponsor 2' },
-    { id: 3, logo: '/logo3.png', alt: 'Sponsor 3' },
-    { id: 4, logo: '/logo4.png', alt: 'Sponsor 4' },
-    { id: 5, logo: '/logo5.png', alt: 'Sponsor 5' },
+  // 1. Array sponsor menggunakan URL PNG transparan dari Google/CDN publik
+const baseSponsors = [
+    { 
+      id: 1, 
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg', 
+      alt: 'Bank BJB' 
+    },
+    { 
+      // Menggunakan placeholder/logo representasi Seraya Group selaku EO utama
+      id: 2, 
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg', 
+      alt: 'Seraya Group' 
+    },
+    { 
+      // Selarinya Recreation Club / SRC logo representasi
+      id: 3, 
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg', 
+      alt: 'Selarinya Recreation Club' 
+    },
+    { 
+      id: 4, 
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg', 
+      alt: 'Apparel Partner' 
+    },
+    { 
+      id: 5, 
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg', 
+      alt: 'Media Partner' 
+    },
   ];
 
-  // 2. Trick Infinite Loop Mulus: Duplikasi array jika jumlah sponsor asli sedikit
-  // Di sini kita gabungkan array-nya sampai 3 kali supaya jalannya tidak putus-putus
   const infiniteSponsors = [...baseSponsors, ...baseSponsors, ...baseSponsors];
 
   return (
     <div className="w-full bg-[#baa578] py-16 flex flex-col items-center font-sans overflow-hidden">
       
+      {/* SECTION 1: UTAMA (RESPONSIVE GRID) */}
+      <div className="grid grid-cols-3 gap-10 sm:gap-8 max-w-4xl w-full text-center items-start mb-14 px-6">
   
-      <div className="grid grid-cols-3 gap-8 max-w-4xl w-full text-center items-start mb-14 px-4">
-  
-        <div className="flex flex-col items-center">
-          <span className="text-[10px] tracking-widest text-[#2B3E2A] font-bold uppercase mb-4">
+        {/* Powered By */}
+        <div className="flex flex-col items-center justify-center">
+          <span className="text-[10px] tracking-widest text-[#2B3E2A] font-bold uppercase mb-3 md:mb-4">
             Powered By
           </span>
-          <img src={logoKahf} alt="Kahf Logo" className="h-10 sm:h-14 w-auto object-contain brightness-0 invert" />
+          <div className="h-12 sm:h-14 md:h-16 w-full flex items-center justify-center">
+            <img 
+              src={logoKahf} 
+              alt="Kahf Logo" 
+              className="h-full w-auto max-w-[180px] object-contain brightness-0 invert" 
+            />
+          </div>
         </div>
 
         {/* Organized By */}
-        <div className="flex flex-col items-center">
-          <span className="text-[10px] tracking-widest text-[#2B3E2A] font-bold uppercase mb-4">
+        <div className="flex flex-col items-center justify-center">
+          <span className="text-[10px] tracking-widest text-[#2B3E2A] font-bold uppercase mb-3 md:mb-4">
             Organized By
           </span>
-          <img src={logoSrc} alt="SRC Logo" className="h-10 sm:h-14 w-auto object-contain brightness-0 invert" />
+          <div className="h-12 sm:h-14 md:h-16 w-full flex items-center justify-center">
+            <img 
+              src={logoSrc} 
+              alt="SRC Logo" 
+              className="h-full w-auto max-w-[180px] object-contain brightness-0 invert" 
+            />
+          </div>
         </div>
 
         {/* Supported By */}
-        <div className="flex flex-col items-center">
-          <span className="text-[10px] tracking-widest text-[#2B3E2A] font-bold uppercase mb-4">
+        <div className="flex flex-col items-center justify-center">
+          <span className="text-[10px] tracking-widest text-[#2B3E2A] font-bold uppercase mb-3 md:mb-4">
             Supported By
           </span>
-          <div className="w-12 h-12 flex items-center justify-center text-[#2B3E2A]">
-            <img src={chanaya} alt="Chanaya Logo" className="h-10 sm:h-14 w-auto object-contain brightness-0 invert" />
+          <div className="h-12 sm:h-14 md:h-16 w-full flex items-center justify-center">
+            <img 
+              src={chanaya} 
+              alt="Chanaya Logo" 
+              className="h-full w-auto max-w-[180px] object-contain brightness-0 invert" 
+            />
           </div>
         </div>
+
       </div>
 
       {/* SECTION 2: SPONSORED BY (INFINITE MARQUEE) */}
@@ -58,21 +96,25 @@ export default function Partners() {
         
         <div className="w-full">
           <Marquee 
-          className="overflow-hidden"
+            className="overflow-hidden"
             speed={40}
             gradient={true}
-            gradientColor="#EAE3C9"
+            gradientColor="#baa578" 
             gradientWidth={80}
             pauseOnHover={false}
           >
-            {/* Render data dari array yang sudah diduplikasi */}
             {infiniteSponsors.map((sponsor, index) => (
               <div 
-                key={`${sponsor.id}-${index}`} // Key unik gabungan ID dan Index
-                className="w-16 h-16 bg-white rounded shadow-sm flex items-center justify-center mx-4 transition-transform hover:scale-105"
+                key={`${sponsor.id}-${index}`} 
+                // Background putih kotak-kotak dihapus, diganti space kosong transparan yang presisi
+                className="w-20 h-14 flex items-center justify-center mx-8 transition-transform hover:scale-110"
               >
-                {/* Contoh pasang gambar aslinya nanti: */}
-                {/* <img src={sponsor.logo} alt={sponsor.alt} className="max-w-[80%] max-h-[80%] object-contain" /> */}
+                <img 
+                  src={sponsor.logo} 
+                  alt={sponsor.alt} 
+                  // h-full w-full diatur agar pas, ditambah brightness-0 invert agar semua logo menjadi putih solid premium
+                  className="w-full h-full object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity duration-200" 
+                />
               </div>
             ))}
           </Marquee>
