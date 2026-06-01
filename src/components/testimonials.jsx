@@ -56,7 +56,13 @@ export default function Testimonials() {
     <section className="w-full bg-[#E8E2D0] py-14 overflow-hidden">
 
       <style>{`
+        /* Memastikan container internal swiper mengambil tinggi penuh */
+        .testimonials-swiper .swiper-wrapper {
+          display: flex;
+          align-items: stretch;
+        }
         .testimonials-swiper .swiper-slide {
+          height: auto; /* Ikut tinggi wrapper */
           transform: scale(0.88);
           filter: blur(2px);
           opacity: 0.6;
@@ -96,12 +102,16 @@ export default function Testimonials() {
         >
           {reviews.map((r) => (
             <SwiperSlide key={r.name}>
-              <div className="bg-white rounded-2xl p-5 flex flex-col gap-3 shadow-sm">
+              {/* Ditambahkan h-[240px] md:h-[220px] agar tinggi merata & seimbang */}
+              <div className="bg-white rounded-2xl p-5 flex flex-col gap-3 shadow-sm h-[240px] md:h-[220px]">
                 <Stars count={r.stars} />
-                <p className="font-sora text-[13px] text-[#2d3a20] opacity-80 leading-relaxed flex-1">
+                
+                {/* overflow-y-auto disematkan jaga-jaga kalau ada teks review yang kelewat panjang */}
+                <p className="font-sora text-[13px] text-[#2d3a20] opacity-80 leading-relaxed flex-1 overflow-y-auto scrollbar-none">
                   "{r.text}"
                 </p>
-                <div className="flex items-center gap-3 mt-2">
+                
+                <div className="flex items-center gap-3 mt-auto pt-2 border-t border-gray-100">
                   <div className="w-9 h-9 rounded-full bg-[#c9b96e] flex items-center justify-center shrink-0">
                     <span className="font-sora font-bold text-[11px] text-[#1e2d16]">{r.initials}</span>
                   </div>

@@ -24,47 +24,44 @@ export default function Home() {
           {/* Days */}
           <div className="flex flex-col items-center">
             <span 
-              style={{ fontFamily: 'Charsenz, sans-serif' }} 
-              className="text-3xl sm:text-4xl font-bold tracking-wider"
+              
+              className="text-3xl sm:text-4xl font-bold tracking-wider font-sora"
             >
               {String(days).padStart(2, '0')}
             </span>
             <span className="text-[10px] sm:text-xs uppercase tracking-widest opacity-70 mt-1">Days</span>
           </div>
           
-          <span className="text-2xl sm:text-3xl font-light opacity-50">:</span>
+          <span className="text-2xl sm:text-3xl font-light opacity-30">:</span>
 
           {/* Hours */}
           <div className="flex flex-col items-center">
             <span 
-              style={{ fontFamily: 'Charsenz, sans-serif' }} 
-              className="text-3xl sm:text-4xl font-bold tracking-wider"
+              className="text-3xl sm:text-4xl font-bold tracking-wider font-sora"
             >
               {String(hours).padStart(2, '0')}
             </span>
             <span className="text-[10px] sm:text-xs uppercase tracking-widest opacity-70 mt-1">Hours</span>
           </div>
 
-          <span className="text-2xl sm:text-3xl font-light opacity-50">:</span>
+          <span className="text-2xl sm:text-3xl font-light opacity-30">:</span>
 
           {/* Minutes */}
           <div className="flex flex-col items-center">
             <span 
-              style={{ fontFamily: 'Charsenz, sans-serif' }} 
-              className="text-3xl sm:text-4xl font-bold tracking-wider"
+              className="text-3xl sm:text-4xl font-bold tracking-wider font-sora"
             >
               {String(minutes).padStart(2, '0')}
             </span>
             <span className="text-[10px] sm:text-xs uppercase tracking-widest opacity-70 mt-1">Min</span>
           </div>
 
-          <span className="text-2xl sm:text-3xl font-light opacity-50">:</span>
+          <span className="text-2xl sm:text-3xl font-light opacity-30">:</span>
 
           {/* Seconds */}
           <div className="flex flex-col items-center">
             <span 
-              style={{ fontFamily: 'Charsenz, sans-serif' }} 
-              className="text-3xl sm:text-4xl font-bold tracking-wider text-[#ffff]" /* Memberi aksen warna hijau terang pada detik */
+              className="text-3xl sm:text-4xl font-bold tracking-wider font-sora"
             >
               {String(seconds).padStart(2, '0')}
             </span>

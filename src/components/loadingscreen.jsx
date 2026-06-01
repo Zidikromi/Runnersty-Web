@@ -2,15 +2,14 @@ import React, { useState, useEffect } from 'react';
 import logoHijau from '../Asset/LogoHijau.png';
 
 export default function LoadingScreen({ onComplete }) {
-  const [startFly, setStartFly] = useState(false);
+  const [startFade, setStartFade] = useState(false);
   const [isDrawn, setIsDrawn] = useState(false);
 
   useEffect(() => {
     const handleWindowLoad = () => {
-      // Jeda sebentar di tengah agar logo terbaca
+      // Jeda awal saat halaman beres di-load (agar logo terbaca dulu di tengah)
       setTimeout(() => {
-        setStartFly(true); 
-        if (onComplete) onComplete(); // Pemicu transisi konten web langsung dinyalakan di sini
+        setStartFade(true); 
       }, 800);
     };
 
@@ -20,77 +19,41 @@ export default function LoadingScreen({ onComplete }) {
       window.addEventListener('load', handleWindowLoad);
     }
 
-    if (startFly) {
-      // Ketika animasi selesai, hapus total screen dari latar belakang
+    return () => window.removeEventListener('load', handleWindowLoad);
+  }, []);
+
+  // Efek untuk menghandle akhir animasi fade out (durasi 500ms)
+  useEffect(() => {
+    if (startFade) {
       const timeout = setTimeout(() => {
-        setIsDrawn(true);
-      }, 500);
+        if (onComplete) onComplete(); // Pemicu konten web masuk setelah splash memudar
+        setIsDrawn(true);             // Hapus loading screen dari DOM
+      }, 500); // Sinkron dengan duration-500
       return () => clearTimeout(timeout);
     }
-
-    return () => window.removeEventListener('load', handleWindowLoad);
-  }, [startFly, onComplete]);
+  }, [startFade, onComplete]);
 
   if (isDrawn) return null;
 
   return (
-    <>
-      <style>{`
-        @keyframes flyToNavbar {
-          0% {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(1.2);
-            opacity: 1;
-          }
-          100% {
-            top: 24px; 
-            left: 32px; 
-            transform: translate(0, 0) scale(0.7);
-            opacity: 0;
-          }
-        }
-
-        @media (max-width: 640px) {
-          @keyframes flyToNavbar {
-            0% {
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%) scale(1);
-              opacity: 1;
-            }
-            100% {
-              top: 16px;
-              left: 16px;
-              transform: translate(0, 0) scale(0.6);
-              opacity: 0;
-            }
-          }
-        }
-
-        .animate-fly {
-          animation: flyToNavbar 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-        }
-      `}</style>
-
-      {/* Background overlay loading screen memudar seiring logo terbang */}
-      <div className={`fixed inset-0 bg-[#e8e2d0] z-50 transition-opacity duration-400 ${startFly ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-        
-        <div
-          className={`fixed h-[56px] w-[168px] overflow-hidden ${
-            startFly 
-              ? 'animate-fly' 
-              : 'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-125'
-          }`}
-        >
-          <img
-            src={logoHijau}
-            alt="Runnersty Logo"
-            className="w-full h-full object-cover"
-          />
-        </div>
-
+    /* OVERLAY BACKGROUND KREM (Ikut memudar halus) */
+    <div 
+      className={`fixed inset-0 bg-[#e8e2d0] z-50 flex items-center justify-center transition-all duration-500 ease-in-out ${
+        startFade ? 'opacity-0 pointer-events-none' : 'opacity-100'
+      }`}
+    >
+      {/* LOGO DI TENGAH (Mengecil sedikit dan memudar halus di tempat) */}
+      <div
+        className={`h-[56px] w-[168px] overflow-hidden transition-all duration-500 cubic-bezier(0.25, 1, 0.5, 1) ${
+          startFade ? 'opacity-0 scale-95' : 'opacity-100 scale-125'
+        }`}
+      >
+        <img
+          src={logoHijau}
+          alt="Runnersty Logo"
+          className="w-full h-full object-cover"
+        />
       </div>
-    </>
+    </div>
   );
 }

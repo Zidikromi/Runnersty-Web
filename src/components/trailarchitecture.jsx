@@ -20,15 +20,17 @@ const cards = [
     title: 'ADVENTUROUS',
     num: '03',
     desc: 'Step out your comfort zone and embrace the thrill of the unknown path.',
-  }, {
+  }, 
+  {
     img: bg,
     title: 'ADVENTUROUS',
-    num: '03',
+    num: '04',
     desc: 'Step out your comfort zone and embrace the thrill of the unknown path.',
-  }, {
+  }, 
+  {
     img: bg,
     title: 'ADVENTUROUS',
-    num: '03',
+    num: '05',
     desc: 'Step out your comfort zone and embrace the thrill of the unknown path.',
   },
 ];
@@ -44,34 +46,38 @@ export default function TrailArchitecture() {
             SEMI TRAIL<br />ARCHITECTURE
           </h2>
           <p className="text-[14px] md:text-[15px] text-[#2D4A22] font-medium max-w-md mt-2">
-            Qonquer the track and beat your personal best at Runnersty.<br />
+            Conquer the track and beat your personal best at Runnersty.<br />
             Are you up for the challenge?
           </p>
         </div>
 
-        {/* Cards Container - Ditambahkan max-w-3xl agar pilar kartu berkumpul rapi */}
-        <div className="flex flex-col md:flex-row items-stretch justify-center mx-auto gap-4 h-[460px] w-full">
-          {cards.map((card) => (
+        {/* Cards Container 
+            Mobile: flex-col, h-auto (tinggi fleksibel mengikuti tumpukan kartu)
+            Desktop: flex-row, h-[460px] (kembali ke layout accordion semula) */}
+        <div className="flex flex-col md:flex-row items-stretch justify-center mx-auto gap-4 h-auto md:h-[460px] w-full">
+          {cards.map((card, index) => (
             <div 
-              key={card.title} 
-              className="group relative flex-1 md:max-w-[165px] hover:md:max-w-[420px] hover:flex-[2.5] transition-all duration-500 ease-in-out rounded-[24px] overflow-hidden shadow-md flex flex-col justify-between items-center py-8 px-5 cursor-pointer"
+              key={index} 
+              className="group relative flex-none md:flex-1 h-[200px] md:h-full md:max-w-[165px] hover:md:max-w-[420px] hover:md:flex-[2.5] transition-all duration-500 ease-in-out rounded-[24px] overflow-hidden shadow-md flex flex-col justify-between py-6 px-6 md:py-8 md:px-5 cursor-pointer"
             >
               {/* Background Image */}
               <img
                 src={card.img}
                 alt={card.title}
-                className="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover:md:scale-105"
               />
               
-              {/* Overlay Gelap */}
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500 z-10" />
+              {/* Overlay Gelap (Di mobile langsung agak gelap agar teks deskripsi terbaca jelas) */}
+              <div className="absolute inset-0 bg-black/40 md:bg-black/20 md:group-hover:bg-black/40 transition-colors duration-500 z-10" />
 
-              {/* TAMPILAN NORMAL (Default/Ramping) */}
-              <div className="absolute inset-0 z-20 flex flex-col justify-between items-center py-8 opacity-100 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none">
+              {/* ======================================================== */}
+              {/* TAMPILAN NORMAL (Hanya Aktif di Desktop `md:flex`) */}
+              {/* ======================================================== */}
+              <div className="hidden md:flex absolute inset-0 z-20 flex-col justify-between items-center py-8 opacity-100 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none">
                 {/* Atas: Garis + Teks Vertikal */}
                 <div className="flex flex-col items-center gap-3">
                   <div className="w-[1px] h-10 bg-white/80" />
-                  <p className="text-white text-[14px]  tracking-[0.25em] uppercase [writing-mode:vertical-lr] rotate-180">
+                  <p className="text-white text-[14px] tracking-[0.25em] uppercase [writing-mode:vertical-lr] rotate-180">
                     {card.title}
                   </p>
                 </div>
@@ -86,17 +92,31 @@ export default function TrailArchitecture() {
                 </div>
               </div>
 
-              {/* TAMPILAN HOVER (Saat Melebar) */}
-              <div className="relative z-20 w-full h-full flex flex-col justify-end items-start opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 text-left px-2">
+              {/* ======================================================== */}
+              {/* TAMPILAN INFORMASI (Langsung Muncul di Mobile, Ter-hover di Desktop) */}
+              {/* ======================================================== */}
+              <div className="relative z-20 w-full h-full flex flex-col justify-between md:justify-end items-start opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 md:delay-100 text-left">
+                
+                {/* Bagian Atas Khusus Mobile: Menampilkan Nomor di pojok kanan atas kartu */}
+                <div className="w-full flex justify-end md:hidden">
+                  <span 
+                    className="text-[32px] font-black tracking-wider text-transparent leading-none"
+                    style={{ WebkitTextStroke: '1.5px rgba(255, 255, 255, 0.7)' }}
+                  >
+                    {card.num}
+                  </span>
+                </div>
+
+                {/* Bagian Bawah: Judul + Deskripsi */}
                 <div className="w-full">
                   {/* Garis Horizontal Tipis */}
-                  <div className="w-12 h-[2px] bg-white/70 mb-3" />
-                  {/* Judul Font Gendut/Carsenz */}
-                  <h3 className="font-carsenz text-white text-[28px] md:text-[32px] font-black uppercase tracking-wide leading-tight mb-2">
+                  <div className="w-12 h-[2px] bg-white/70 mb-2 md:mb-3" />
+                  {/* Judul */}
+                  <h3 className="font-carsenz text-white text-[24px] md:text-[32px] font-black uppercase tracking-wide leading-tight mb-1 md:mb-2">
                     {card.title}
                   </h3>
                   {/* Deskripsi */}
-                  <p className="text-white/90 text-[13px] font-normal leading-relaxed max-w-[280px]">
+                  <p className="text-white/90 text-[12px] md:text-[13px] font-normal leading-relaxed max-w-[90%] md:max-w-[280px]">
                     {card.desc}
                   </p>
                 </div>
@@ -109,4 +129,4 @@ export default function TrailArchitecture() {
       </div>
     </section>
   );
-}
+} 
