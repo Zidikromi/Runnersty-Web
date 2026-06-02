@@ -20,54 +20,45 @@ export default function Home() {
       );
     } else {
       return (
-        <div className="flex gap-4 text-white md:pl-9 mt-4 mb-6 select-none">
-          {/* Days */}
-          <div className="flex flex-col items-center">
-            <span 
-              
-              className="text-3xl sm:text-4xl font-bold tracking-wider font-sora"
-            >
-              {String(days).padStart(2, '0')}
-            </span>
-            <span className="text-[10px] sm:text-xs uppercase tracking-widest opacity-70 mt-1">Days</span>
-          </div>
-          
-          <span className="text-2xl sm:text-3xl font-light opacity-30">:</span>
+       <div className="flex gap-2 sm:gap-4 text-white md:pl-8 mb-6 select-none max-w-sm ">
+  {/* Days */}
+  <div className="flex flex-col items-center min-w-[45px] sm:min-w-[60px]">
+    <span className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wider font-sora">
+      {String(days).padStart(2, '0')}
+    </span>
+    <span className="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest opacity-70 mt-0.5">Days</span>
+  </div>
+  
+  <span className="text-xl sm:text-2xl md:text-3xl font-light opacity-30 bottom-0.5 relative">:</span>
 
-          {/* Hours */}
-          <div className="flex flex-col items-center">
-            <span 
-              className="text-3xl sm:text-4xl font-bold tracking-wider font-sora"
-            >
-              {String(hours).padStart(2, '0')}
-            </span>
-            <span className="text-[10px] sm:text-xs uppercase tracking-widest opacity-70 mt-1">Hours</span>
-          </div>
+  {/* Hours */}
+  <div className="flex flex-col items-center min-w-[45px] sm:min-w-[60px]">
+    <span className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wider font-sora">
+      {String(hours).padStart(2, '0')}
+    </span>
+    <span className="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest opacity-70 mt-0.5">Hours</span>
+  </div>
 
-          <span className="text-2xl sm:text-3xl font-light opacity-30">:</span>
+  <span className="text-xl sm:text-2xl md:text-3xl font-light opacity-30 bottom-0.5 relative">:</span>
 
-          {/* Minutes */}
-          <div className="flex flex-col items-center">
-            <span 
-              className="text-3xl sm:text-4xl font-bold tracking-wider font-sora"
-            >
-              {String(minutes).padStart(2, '0')}
-            </span>
-            <span className="text-[10px] sm:text-xs uppercase tracking-widest opacity-70 mt-1">Min</span>
-          </div>
+  {/* Minutes */}
+  <div className="flex flex-col items-center min-w-[45px] sm:min-w-[60px]">
+    <span className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wider font-sora">
+      {String(minutes).padStart(2, '0')}
+    </span>
+    <span className="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest opacity-70 mt-0.5">Min</span>
+  </div>
 
-          <span className="text-2xl sm:text-3xl font-light opacity-30">:</span>
+  <span className="text-xl sm:text-2xl md:text-3xl font-light opacity-30 bottom-0.5 relative">:</span>
 
-          {/* Seconds */}
-          <div className="flex flex-col items-center">
-            <span 
-              className="text-3xl sm:text-4xl font-bold tracking-wider font-sora"
-            >
-              {String(seconds).padStart(2, '0')}
-            </span>
-            <span className="text-[10px] sm:text-xs uppercase tracking-widest opacity-70 mt-1">Sec</span>
-          </div>
-        </div>
+  {/* Seconds */}
+  <div className="flex flex-col items-center min-w-[45px] sm:min-w-[60px]">
+    <span className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wider font-sora">
+      {String(seconds).padStart(2, '0')}
+    </span>
+    <span className="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest opacity-70 mt-0.5">Sec</span>
+  </div>
+</div>
       );
     }
   };
@@ -86,7 +77,7 @@ export default function Home() {
       
 <div className="w-full mx-auto flex flex-col items-start justify-center z-10 mt-16 md:mt-2 px-12 md:px-32">        
 
-        <div className="flex items-center gap-5 pl-2 -mb-5 md:pl-10 md:mb-3">
+        <div className="flex items-center gap-5 pl-5 sm:pl-8 sm:mb-2 -mb-5 md:pl-16 md:mb-3">
           <img 
             src={logoKahf} 
             alt="Kahf Logo" 
