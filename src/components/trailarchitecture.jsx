@@ -42,10 +42,10 @@ export default function TrailArchitecture() {
 
         {/* Heading + Subtitle */}
         <div className="flex flex-col gap-4 mb-14">
-          <h2 className="font-carsenz text-[48px] md:text-[64px] leading-[0.95] uppercase text-[#2D4A22] max-w-xl tracking-tight">
+          <h2 className="font-carsenz text-[48px] md:text-[64px] leading-[0.95] uppercase text-[#2D3A1F] max-w-xl tracking-tight">
             SEMI TRAIL<br />ARCHITECTURE
           </h2>
-          <p className="text-[14px] md:text-[15px] text-[#2D4A22] font-medium max-w-md mt-2">
+          <p className="text-[14px] md:text-[15px] text-[#4A613E] font-medium font-sora mt-2 md:whitespace-nowrap">
             Conquer the track and beat your personal best at Runnersty.<br />
             Are you up for the challenge?
           </p>
@@ -67,8 +67,19 @@ export default function TrailArchitecture() {
                 className="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover:md:scale-105"
               />
               
-              {/* Overlay Gelap (Di mobile langsung agak gelap agar teks deskripsi terbaca jelas) */}
-              <div className="absolute inset-0 bg-black/40 md:bg-black/20 md:group-hover:bg-black/40 transition-colors duration-500 z-10" />
+              {/* <div className="absolute inset-0 bg-black/40 md:bg-black/20 md:group-hover:bg-black/40 transition-colors duration-500 z-10" /> */}
+              {/* Overlay mobile only */}
+              <div className="absolute inset-0 bg-black/40 md:hidden z-10" />
+              {/* Gradient card kecil (default) */}
+              <div
+                className="absolute inset-0 z-10 pointer-events-none transition-opacity duration-500 opacity-100 group-hover:opacity-0"
+                style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 75%)' }}
+              />
+              {/* Gradient card besar (hover) */}
+              <div
+                className="absolute inset-0 z-10 pointer-events-none transition-opacity duration-500 opacity-0 group-hover:opacity-100"
+                style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 45%, rgba(0,0,0,0) 70%)' }}
+              />
 
               {/* ======================================================== */}
               {/* TAMPILAN NORMAL (Hanya Aktif di Desktop `md:flex`) */}
@@ -77,15 +88,15 @@ export default function TrailArchitecture() {
                 {/* Atas: Garis + Teks Vertikal */}
                 <div className="flex flex-col items-center gap-3">
                   <div className="w-[1px] h-10 bg-white/80" />
-                  <p className="text-white text-[14px] tracking-[0.25em] uppercase [writing-mode:vertical-lr] rotate-180">
+                  <p className="text-white text-[22px] font-carsenz uppercase [writing-mode:vertical-lr]">
                     {card.title}
                   </p>
                 </div>
                 {/* Bawah: Nomor Outlined */}
                 <div>
-                  <span 
-                    className="text-[48px] font-black tracking-wider text-transparent"
-                    style={{ WebkitTextStroke: '2px rgba(255, 255, 255, 0.8)' }}
+                  <span
+                    className="text-[80px] font-black font-carsenz leading-none text-transparent"
+                    style={{ WebkitTextStroke: '1px rgba(255, 255, 255, 0.9)' }}
                   >
                     {card.num}
                   </span>
@@ -100,7 +111,7 @@ export default function TrailArchitecture() {
                 {/* Bagian Atas Khusus Mobile: Menampilkan Nomor di pojok kanan atas kartu */}
                 <div className="w-full flex justify-end md:hidden">
                   <span 
-                    className="text-[32px] font-black tracking-wider text-transparent leading-none"
+                    className="text-[32px] font-carsenz font-normal tracking-wider text-transparent leading-none"
                     style={{ WebkitTextStroke: '1.5px rgba(255, 255, 255, 0.7)' }}
                   >
                     {card.num}
@@ -112,11 +123,11 @@ export default function TrailArchitecture() {
                   {/* Garis Horizontal Tipis */}
                   <div className="w-12 h-[2px] bg-white/70 mb-2 md:mb-3" />
                   {/* Judul */}
-                  <h3 className="font-carsenz text-white text-[24px] md:text-[32px] font-black uppercase tracking-wide leading-tight mb-1 md:mb-2">
+                  <h3 className="font-carsenz text-white text-[24px] md:text-[32px] font-normal uppercase tracking-wide leading-tight mb-1 md:mb-2">
                     {card.title}
                   </h3>
                   {/* Deskripsi */}
-                  <p className="text-white/90 text-[12px] md:text-[13px] font-normal leading-relaxed max-w-[90%] md:max-w-[280px]">
+                  <p className="text-white/90 text-[12px] md:text-[13px] font-sora leading-relaxed max-w-[90%] md:max-w-[280px]">
                     {card.desc}
                   </p>
                 </div>

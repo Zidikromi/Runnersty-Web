@@ -52,7 +52,7 @@ export default function CourseMap() {
             The Course<br />Map
           </h2>
 
-          <p className="font-sora text-[13px] md:text-[14px] text-[#E8E2D0] opacity-70 leading-relaxed max-w-md text-justify">
+          <p className="font-sora text-[13px] md:text-[14px] text-[#E8E2D0] opacity-90 leading-relaxed max-w-md text-justify">
             Power through 5 kilometers of dynamic, mixed terrain. From the fast-paced
             stretches of raw nature to the rugged, uneven dirt sections that demand your
             focus, every segment is an adventurous sprint designed to test your agility
@@ -67,13 +67,22 @@ export default function CourseMap() {
                   <p className="font-sora font-semibold text-[13px] md:text-[14px] leading-tight">
                     {item.label}
                   </p>
-                  <p className="font-sora text-[12px] md:text-[13px] opacity-60 mt-0.5">
+                  <p className="font-sora text-[12px] md:text-[13px] mt-0.5 text-[#B8A678]">
                     {item.value}
                   </p>
                 </div>
               </div>
             ))}
           </div>
+
+          <a
+            href="https://tiketmart.com"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-2 w-fit bg-[#E8E2D0] hover:bg-white text-[#1e2d16] font-sora font-semibold text-[13px] py-2.5 px-6 rounded-xl flex items-center gap-2 active:scale-90 transition-all"
+          >
+            Race Rules <span>→</span>
+          </a>
 
         </div>
 

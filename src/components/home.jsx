@@ -8,7 +8,7 @@ import Countdown from 'react-countdown';
 
 export default function Home() {
   // Tentukan tanggal target event Anda di sini (Format: YYYY-MM-DDTHH:mm:ss)
-  const targetDate = new Date('2026-08-17T00:00:00');
+  const targetDate = new Date('2026-08-16T00:00:00');
 
   // Renderer kustom untuk mengubah tampilan react-countdown
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
@@ -113,13 +113,13 @@ export default function Home() {
         </div>
 
         <div className="text-white max-w-xl space-y-1 mb-4 md:mb-6 md:pl-9">
-          <p className="text-sm sm:text-base font-light tracking-wide leading-relaxed opacity-90">
+          <p className="text-sm sm:text-base font-sora font-light tracking-wide leading-relaxed opacity-90">
             Step into the ultimate running experience with Runnersty.
           </p>
-          <p className="text-sm sm:text-base font-light tracking-wide opacity-90">
+          <p className="text-sm sm:text-base font-sora font-light tracking-wide opacity-90">
             Let's make every step count!
           </p>
-          <p className="text-sm sm:text-base font-semibold tracking-wider mt-1">
+          <p className="text-sm sm:text-base font-sora font-semibold tracking-wider mt-1">
             Lace Up and Register Now!
           </p>
         </div>

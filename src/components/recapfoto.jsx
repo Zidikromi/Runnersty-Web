@@ -44,7 +44,7 @@ const slides = [
   () => (
     <div style={{ display:'grid', gridTemplateColumns:'55% 45%', gridTemplateRows:'11fr 9fr', gap:GAP, height:H }}>
       <div style={{ gridRow:'1/3' }} className="rounded-2xl overflow-hidden">
-        <img src={bg} alt="" className="w-full h-full object-cover" />
+        <img sr c={bg} alt="" className="w-full h-full object-cover" />
       </div>
       <div className="rounded-2xl overflow-hidden">
         <img src={bg1} alt="" className="w-full h-full object-cover object-top" />

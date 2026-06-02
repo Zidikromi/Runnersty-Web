@@ -39,14 +39,14 @@ const baseSponsors = [
   const infiniteSponsors = [...baseSponsors, ...baseSponsors, ...baseSponsors];
 
   return (
-    <div className="w-full bg-[#baa578] py-16 flex flex-col items-center font-sans overflow-hidden">
+    <div className="w-full bg-[#B8A578] py-16 flex flex-col items-center font-sans overflow-hidden">
       
       {/* SECTION 1: UTAMA (RESPONSIVE GRID) */}
       <div className="grid grid-cols-3 gap-10 sm:gap-8 max-w-4xl w-full text-center items-start mb-14 px-6">
   
         {/* Powered By */}
         <div className="flex flex-col items-center justify-center">
-          <span className="text-[10px] tracking-widest text-[#2B3E2A] font-bold uppercase mb-3 md:mb-4">
+          <span className="text-[10px] tracking-widest text-[#2B3E2A] font-bold font-sora uppercase mb-3 md:mb-4">
             Powered By
           </span>
           <div className="h-12 sm:h-14 md:h-16 w-full flex items-center justify-center">
@@ -60,7 +60,7 @@ const baseSponsors = [
 
         {/* Organized By */}
         <div className="flex flex-col items-center justify-center">
-          <span className="text-[10px] tracking-widest text-[#2B3E2A] font-bold uppercase mb-3 md:mb-4">
+          <span className="text-[10px] tracking-widest text-[#2D3A1F] font-bold font-sora uppercase mb-3 md:mb-4">
             Organized By
           </span>
           <div className="h-12 sm:h-14 md:h-16 w-full flex items-center justify-center">
@@ -74,7 +74,7 @@ const baseSponsors = [
 
         {/* Supported By */}
         <div className="flex flex-col items-center justify-center">
-          <span className="text-[10px] tracking-widest text-[#2B3E2A] font-bold uppercase mb-3 md:mb-4">
+          <span className="text-[10px] tracking-widest text-[#2D3A1F] font-bold font-sora uppercase mb-3 md:mb-4">
             Supported By
           </span>
           <div className="h-12 sm:h-14 md:h-16 w-full flex items-center justify-center">
@@ -90,7 +90,7 @@ const baseSponsors = [
 
       {/* SECTION 2: SPONSORED BY (INFINITE MARQUEE) */}
       <div className="flex flex-col items-center w-full">
-        <span className="text-[10px] tracking-widest text-[#2B3E2A] font-bold uppercase mb-6 px-4">
+        <span className="text-[10px] tracking-widest text-[#2D3A1F] font-bold font-sora uppercase mb-6 px-4">
           Sponsored By
         </span>
         
