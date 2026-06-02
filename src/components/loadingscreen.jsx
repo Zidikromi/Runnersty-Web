@@ -43,15 +43,16 @@ export default function LoadingScreen({ onComplete }) {
       }`}
     >
       {/* LOGO DI TENGAH (Mengecil sedikit dan memudar halus di tempat) */}
+      {/* Menggunakan max-w dan aspect-ratio agar proporsi logo di mobile terjaga sempurna dan pas di tengah */}
       <div
-        className={`h-[56px] w-[168px] overflow-hidden transition-all duration-500 cubic-bezier(0.25, 1, 0.5, 1) ${
+        className={`w-[140px] md:w-[168px] aspect-[3/1] transition-all duration-500 cubic-bezier(0.25, 1, 0.5, 1) ${
           startFade ? 'opacity-0 scale-95' : 'opacity-100 scale-125'
         }`}
       >
         <img
           src={logoHijau}
           alt="Runnersty Logo"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain" 
         />
       </div>
     </div>
