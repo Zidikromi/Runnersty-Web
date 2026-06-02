@@ -34,7 +34,7 @@ export default function Navbar({ isLanding, showFinalNav }) { // Terima showFina
           </div>
 
           {/* SISI TENGAH-KANAN (DESKTOP) */}
-          <div className={`hidden md:flex items-center space-x-8 text-sm font-medium transition-all duration-500 delay-200 ${
+          <div className={`hidden md:flex items-center space-x-8 text-sm font-sorafont-medium transition-all duration-500 delay-200 ${
             isLanding ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'
           }`}>
             <a href="/events" className="text-black font-bold relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black">
@@ -73,7 +73,7 @@ export default function Navbar({ isLanding, showFinalNav }) { // Terima showFina
         />
 
         <div 
-          className={`absolute top-0 right-0 h-full w-[85%] sm:w-80 bg-[#0A1608] flex flex-col justify-between p-8 transition-transform duration-300 ease-in-out ${
+          className={`absolute top-0 right-0 h-full w-[85%] sm:w-80 bg-[#2D3A1F] flex flex-col justify-between p-8 transition-transform duration-300 ease-in-out ${
             isOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
@@ -89,7 +89,7 @@ export default function Navbar({ isLanding, showFinalNav }) { // Terima showFina
           </div>
 
           <div className="flex flex-col space-y-6 text-4xl font-black tracking-wide uppercase my-auto pl-4">
-            <a href="/events" className="text-[#76B947] hover:opacity-80 transition-opacity">Event</a>
+            <a href="/events" className="text-[#C8E0B8] hover:opacity-80 transition-opacity">Event</a>
             <a href="/maps" className="text-white hover:opacity-80 transition-opacity">Maps</a>
             <a href="/timeline" className="text-white hover:opacity-80 transition-opacity">Timeline</a>
             <a href="/regist" className="text-white hover:opacity-80 transition-opacity">Regist</a>
@@ -97,7 +97,7 @@ export default function Navbar({ isLanding, showFinalNav }) { // Terima showFina
           </div>
 
           <div className="text-center text-[10px] tracking-widest text-white/30 uppercase font-medium pb-4">
-            RUN TO NATURE - 2025
+            RUN TO NATURE - 2026
           </div>
         </div>
       </div>
