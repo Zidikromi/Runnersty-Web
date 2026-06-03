@@ -44,11 +44,14 @@ export default function TrailArchitecture() {
     <section className="w-full bg-[#E8E2D0] py-16 px-6 md:px-16 font-sora relative overflow-hidden">
 
       {/* Contour Decoration */}
-      <img
-        src={asset13}
-        alt=""
-        className="absolute -top-32 -right-56 w-[500px] opacity-30 object-contain pointer-events-none select-none z-0 -scale-x-100"
-      />
+      <div className="absolute top-0 right-0 w-[260px] md:w-[340px] h-[200px] md:h-[260px] overflow-hidden pointer-events-none select-none z-0 opacity-40">
+        <img
+          src={asset13}
+          alt=""
+          className="w-full h-full object-cover"
+          style={{ objectPosition: 'right top', transform: 'rotate(135deg) scale(1.5) scaleY(-1)', transformOrigin: 'top right' }}
+        />
+      </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
 

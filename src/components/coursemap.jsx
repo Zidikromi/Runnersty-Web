@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import bg1 from '../Asset/bg1.jpeg';
+import bgcourse from '../Asset/PTTERN1.png';
 import RaceRulesModal from './racerulesmodal';
 import runnerstyLogoWhite from '../Asset/RunnerstyLogoWhite.png';
 import logokahf from '../Asset/logokahf.png';
@@ -42,7 +43,7 @@ export default function CourseMap() {
   const [showRules, setShowRules] = useState(false);
 
   return (
-    <section id="coursemap" className="w-full bg-[#1e2d16] py-14 px-6 md:px-12 overflow-hidden relative">
+    <section id="coursemap" className="w-full py-14 px-6 md:px-12 overflow-hidden relative" style={{ backgroundImage: `url(${bgcourse})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
 
       <div className="absolute -bottom-16 -left-28 w-[200px] h-[200px] md:w-[320px] md:h-[320px] opacity-10 pointer-events-none select-none">
         <img src={runnerstyLogoWhite} alt="" className="w-full h-full object-contain" />
