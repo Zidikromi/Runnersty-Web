@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion'; // 1. Import motion
 import bg1 from '../Asset/bg1.jpeg';
 import bgcourse from '../Asset/PTTERN5.png';
 import RaceRulesModal from './racerulesmodal';
@@ -44,16 +45,19 @@ export default function CourseMap() {
 
   return (
     <section id="coursemap" className="w-full py-14 px-6 md:px-12 overflow-hidden relative" style={{ backgroundImage: `url(${bgcourse})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-
-      {/* <div className="absolute -bottom-16 -left-28 w-[200px] h-[200px] md:w-[320px] md:h-[320px] opacity-10 pointer-events-none select-none">
-        <img src={runnerstyLogoWhite} alt="" className="w-full h-full object-contain" />
-      </div> */}
-
+      
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 relative z-10">
 
-        <div className="flex-1 flex flex-col gap-5 rounded-3xl p-8 border border-white/20 backdrop-blur-md" style={{ background: 'rgba(20,40,15,0.65)' }}>
-
-          <h2 className="uppercase font-carsenz text-[70px] md:text-[72px] leading-none  text-[#E8E2D0]">
+        {/* LEFT: INFO CARD (Muncul dari Kiri) */}
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="flex-1 flex flex-col gap-5 rounded-3xl p-8 border border-white/20 backdrop-blur-md" 
+          style={{ background: 'rgba(20,40,15,0.65)' }}
+        >
+          <h2 className="uppercase font-carsenz text-[70px] md:text-[72px] leading-none text-[#E8E2D0]">
             The Course<br />Map
           </h2>
 
@@ -69,12 +73,8 @@ export default function CourseMap() {
               <div key={item.label} className="flex items-start gap-3 text-[#E8E2D0]">
                 <span className="opacity-70">{item.icon}</span>
                 <div>
-                  <p className="font-sora font-semibold text-[13px] md:text-[14px] leading-tight">
-                    {item.label}
-                  </p>
-                  <p className="font-sora text-[12px] md:text-[13px] mt-0.5 text-[#B8A678]">
-                    {item.value}
-                  </p>
+                  <p className="font-sora font-semibold text-[13px] md:text-[14px] leading-tight">{item.label}</p>
+                  <p className="font-sora text-[12px] md:text-[13px] mt-0.5 text-[#B8A678]">{item.value}</p>
                 </div>
               </div>
             ))}
@@ -88,46 +88,40 @@ export default function CourseMap() {
           </button>
 
           {showRules && <RaceRulesModal onClose={() => setShowRules(false)} />}
+        </motion.div>
 
-        </div>
-
-        {/* RIGHT: Map card */}
-        <div className="flex-1 w-full max-w-sm md:max-w-md">
+        {/* RIGHT: MAP CARD (Muncul dari Kanan dengan Scale) */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="flex-1 w-full max-w-sm md:max-w-md"
+        >
           <div
             className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden"
             style={{
-              backgroundImage: `linear-gradient(to bottom,
-                rgba(10,22,8,0.5) 0%,
-                rgba(10,22,8,0.2) 35%,
-                rgba(10,22,8,0.55) 100%
-              ), url(${bg1})`,
+              backgroundImage: `linear-gradient(to bottom, rgba(10,22,8,0.5) 0%, rgba(10,22,8,0.2) 35%, rgba(10,22,8,0.55) 100%), url(${bg1})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
           >
-            {/* Center: sponsor row + logo mark + brand name */}
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 -translate-y-10">
-              {/* Sponsor row - tepat di atas logo */}
               <div className="flex items-center gap-6">
                 <img src={logokahf} alt="Kahf" className="h-16 object-contain brightness-0 invert" />
                 <img src={srclogo} alt="SRC" className="h-12 object-contain brightness-0 invert" />
                 <img src={chanayalogo} alt="Chanaya" className="h-20 w-20 object-contain rounded-full brightness-0 invert" />
               </div>
-              <img
-                src={runnerstyLogoWhite}
-                alt="Runnersty mark"
-                className="w-52 md:w-64 object-contain drop-shadow-xl"
-              />
+              <img src={runnerstyLogoWhite} alt="Runnersty mark" className="w-52 md:w-64 object-contain drop-shadow-xl" />
             </div>
 
-            {/* Coming soon */}
             <div className="absolute bottom-12 left-0 right-0 flex justify-center">
               <span className="font-carsenz text-[28px] md:text-[36px] tracking-wide text-[#ffffff] drop-shadow-md ">
                 COMING SOON
               </span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

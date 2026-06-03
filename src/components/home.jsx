@@ -1,4 +1,5 @@
 import React from 'react';
+import {motion} from 'framer-motion';
 import background from '../Asset/home-bg.jpeg';
 import RunnerstyLogoatas from '../Asset/RunnerstyLogoWhite.png';
 import logoChanaya from '../Asset/Chanayalogo.avif';
@@ -7,15 +8,35 @@ import logoSrc from '../Asset/srclogo.png';
 import Countdown from 'react-countdown';
 
 
-export default function Home() {
+export default function Home({isLanding}) {
+
   // Tentukan tanggal target event Anda di sini (Format: YYYY-MM-DDTHH:mm:ss)
-  const targetDate = new Date('2026-08-16T00:00:00');
+  const targetDate = new Date('2026-06-05T03:00:00');
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    // Gunakan 'visible' hanya saat isLanding false
+    visible: { 
+      opacity: 1,
+      transition: { staggerChildren: 0.15, delayChildren: 0.3 } 
+    }
+  };
+
+  // 2. Durasi lebih singkat (0.5s) agar lebih "snappy"
+  const itemVariants = {
+    hidden: { opacity: 0, y: 15 }, // Y lebih kecil agar tidak terlalu jauh melompat
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } 
+    }
+  };
 
   // Renderer kustom untuk mengubah tampilan react-countdown
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
       return (
-        <div className="text-white font-semibold text-lg tracking-wider md:pl-9 mt-4 mb-6">
+        <div className="text-white font-semibold text-lg tracking-wider md:pl-9 mb-6">
           The Event Has Begun! 🏁
         </div>
       );
@@ -67,71 +88,38 @@ export default function Home() {
   return (
     <div
       id="events"
-      style={{
-        backgroundImage: `linear-gradient(to bottom, 
-          rgba(10, 22, 8, 0.3) 0%, 
-          rgba(10, 22, 8, 0.5) 50%, 
-          rgba(10, 22, 8, 0.7) 100%
-        ), url(${background})` 
-      }} 
+      style={{ backgroundImage: `linear-gradient(to bottom, rgba(10, 22, 8, 0.3) 0%, rgba(10, 22, 8, 0.5) 50%, rgba(10, 22, 8, 0.7) 100%), url(${background})` }} 
       className="w-full h-screen bg-cover bg-center flex flex-col justify-center items-center px-6 md:px-12 relative overflow-hidden"
     >
-      
-<div className="w-full mx-auto flex flex-col items-start justify-center z-10 mt-16 md:mt-2 px-12 md:px-32">        
+      {/* 3. Bungkus konten dengan motion.div menggunakan variants */}
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate={isLanding ? "hidden" : "visible"}
+        className="w-full mx-auto flex flex-col items-start justify-center z-10 mt-16 md:mt-2 px-12 md:px-32 overflow-hidden"
+      > 
 
-        <div className="flex items-center gap-5 pl-5 sm:pl-8 sm:mb-2 -mb-5 md:pl-16 md:mb-3">
-          <img 
-            src={logoKahf} 
-            alt="Kahf Logo" 
-            className="h-10 sm:h-14 w-auto object-contain brightness-0 invert" 
-          />
-          <img 
-            src={logoSrc} 
-            alt="SRC Logo" 
-            className="h-10 sm:h-14 w-auto object-contain brightness-0 invert" 
-          />
-          <img 
-            src={logoChanaya} 
-            alt="Partner Logo" 
-            className="h-10 sm:h-14 w-auto object-contain brightness-0 invert" 
-          />
-        </div>
+        <motion.div variants={itemVariants} className="flex items-center gap-5 pl-5 sm:pl-8 sm:mb-2 -mb-5 md:pl-16 md:mb-3">
+          <img src={logoKahf} alt="Kahf Logo" className="h-10 sm:h-14 w-auto object-contain brightness-0 invert" />
+          <img src={logoSrc} alt="SRC Logo" className="h-10 sm:h-14 w-auto object-contain brightness-0 invert" />
+          <img src={logoChanaya} alt="Partner Logo" className="h-10 sm:h-14 w-auto object-contain brightness-0 invert" />
+        </motion.div>
 
-        <div className="w-full -mb-6 sm:mb-3 md:mb-6">
-          <img 
-            src={RunnerstyLogoatas} 
-            alt="Runnersty Logo" 
-            className="w-[200px] sm:w-[280px] md:w-[340px] h-[300px] object-contain" 
-          />
-        </div>
+        <motion.div variants={itemVariants} className="w-full -mb-6 sm:mb-3 md:mb-6">
+          <img src={RunnerstyLogoatas} alt="Runnersty Logo" className="w-[200px] sm:w-[280px] md:w-[340px] h-[300px] object-contain" />
+        </motion.div>
 
-        <div className="text-white max-w-xl space-y-1 mb-4 md:mb-6 md:pl-9">
-          <p className="text-sm sm:text-base font-sora font-light tracking-wide leading-relaxed opacity-90">
-            Step into the ultimate running experience with Runnersty.
-          </p>
-          <p className="text-sm sm:text-base font-sora font-light tracking-wide opacity-90">
-            Let's make every step count!
-          </p>
-          <p className="text-sm sm:text-base font-sora font-semibold tracking-wider mt-1">
-            Lace Up and Register Now!
-          </p>
-        </div>
+        <motion.div variants={itemVariants} className="text-white max-w-xl space-y-1 mb-4 md:mb-6 md:pl-9">
+          <p className="text-sm sm:text-base font-sora font-light tracking-wide leading-relaxed opacity-90">Step into the ultimate running experience with Runnersty.</p>
+          <p className="text-sm sm:text-base font-sora font-light tracking-wide opacity-90">Let's make every step count!</p>
+          <p className="text-sm sm:text-base font-sora font-semibold tracking-wider mt-1">Lace Up and Register Now!</p>
+        </motion.div>
 
-        <Countdown date={targetDate} renderer={renderer} />
+        <motion.div variants={itemVariants}>
+           <Countdown date={targetDate} renderer={renderer} />
+        </motion.div>
 
-  
-        <div className="flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto md:pl-9 hidden">
-          <button className="bg-[#2D391F] hover:bg-[#40522c] text-[#e6e2cf] font-semibold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition duration-300 text-sm sm:text-base shadow-md w-full sm:w-auto">
-            Register Now <span className="text-xs">➔</span>
-          </button>
-
-          <button className="bg-transparent hover:bg-white/10 text-white font-medium py-3 px-6 rounded-lg border border-[#D9D2C9]/60 transition duration-300 text-sm sm:text-base text-center w-full sm:w-auto">
-            View Route
-          </button>
-        </div>
-
-      </div>
-
+      </motion.div>
     </div>
   );
 }

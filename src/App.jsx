@@ -113,11 +113,9 @@ function App() {
       {currentPage === 'home' ? (
   <>
     {/* TAMPILAN LANDING PAGE UTAMA */}
-    <div className={`pt-0 md:pt-[97px] transition-all duration-1000 cubic-bezier(0.25, 1, 0.5, 1) delay-200 ${
-      isLanding ? 'opacity-0 blur-md' : 'opacity-100 blur-0'
-    }`}>
-      <Home />
-    </div>
+<div className={`pt-0 md:pt-[97px] transition-all duration-1000 ...`}>
+  <Home isLanding={isLanding} /> {/* <--- KIRIM PROPS DI SINI */}
+</div>
 
     <ScrollAnimate direction="left"><RaceStats /></ScrollAnimate>
     <ScrollAnimate direction="right"><TrailArchitecture /></ScrollAnimate>
@@ -126,10 +124,9 @@ function App() {
     <ScrollAnimate direction="left"><RecapFoto /></ScrollAnimate>
     <ScrollAnimate direction="right"><Testimonials /></ScrollAnimate>
     <ScrollAnimate direction="left"><Register /></ScrollAnimate>
-    <ScrollAnimate direction="up"><GetInTouch /></ScrollAnimate>
-
+    <ScrollAnimate direction="right"><GetInTouch /></ScrollAnimate>
+    <ScrollAnimate direction="left"><Partners /></ScrollAnimate>
     <ScrollAnimate direction="up">
-      <Partners />
       <Footer navigateTo={navigateTo} />
     </ScrollAnimate>
   </>
