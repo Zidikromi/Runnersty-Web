@@ -15,16 +15,19 @@ export default function ScrollAnimate({ children, direction = 'left', delay = 'd
   };
 
   return (
-    /* Perubahan: Ditambahkan w-full dan overflow-x-clip agar elemen yang bergeser ke kanan tidak menjebol layar */
-    <div
-      ref={ref}
-      className={`w-full overflow-x-clip transition-all duration-1000 cubic-bezier(0.25, 1, 0.5, 1) ${delay} ${
-        inView
-          ? 'translate-x-0 translate-y-0 opacity-100 blur-0'
-          : `${getDirectionClass()} opacity-0 blur-lg`
-      }`}
-    >
-      {children}
+    /* 1. PARENT (Statis): Berfungsi sebagai benteng mutlak agar tidak ada yang bocor ke kanan/kiri */
+    <div ref={ref} className="w-full overflow-hidden">
+      
+      <div
+        className={`w-full transition-all duration-1000 cubic-bezier(0.25, 1, 0.5, 1) ${delay} ${
+          inView
+            ? 'translate-x-0 translate-y-0 opacity-100 blur-0'
+            : `${getDirectionClass()} opacity-0 blur-lg`
+        }`}
+      >
+        {children}
+      </div>
+
     </div>
   );
 }
