@@ -1,4 +1,4 @@
-import logoHijau from '../Asset/LogoHijau.png';
+import LogoPutih from '../Asset/LogoPutih.png';
 
 const events = [
   {
@@ -33,10 +33,15 @@ export default function Timeline() {
 
       {/* Dekorasi logo vertikal kanan */}
       <img
-        src={logoHijau}
+        src={LogoPutih}
         alt=""
-        className="hidden md:block absolute right-[-220px] top-1/2 opacity-20 select-none pointer-events-none object-contain"
-        style={{ width: '520px', transform: 'translateY(-40%) rotate(-90deg)' }}
+        className="hidden md:block absolute right-[-220px] top-1/2 select-none pointer-events-none object-contain"
+        style={{
+          width: '520px',
+          transform: 'translateY(-40%) rotate(-90deg)',
+          opacity: 0.5,
+          filter: 'brightness(0) invert(73%) sepia(17%) saturate(560%) hue-rotate(7deg) brightness(95%) contrast(86%)',
+        }}
       />
 
       <div className="max-w-3xl mx-auto">
