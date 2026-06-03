@@ -1,7 +1,7 @@
 import React from 'react';
 import bg from '../Asset/bg.jpeg';
 import bg1 from '../Asset/bg1.jpeg';
-import asset13 from '../Asset/asset13.png';
+import asset13 from '../Asset/Asset 13ICON.png';
 
 const cards = [
   {
