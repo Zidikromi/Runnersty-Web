@@ -1,3 +1,5 @@
+import logoHijau from '../Asset/LogoHijau.png';
+
 const events = [
   {
     align: 'left',
@@ -28,6 +30,14 @@ const events = [
 export default function Timeline() {
   return (
     <section id="timeline" className="w-full bg-[#E8E2D0] py-14 px-6 md:px-12 relative overflow-hidden">
+
+      {/* Dekorasi logo vertikal kanan */}
+      <img
+        src={logoHijau}
+        alt=""
+        className="hidden md:block absolute right-[-220px] top-1/2 opacity-20 select-none pointer-events-none object-contain"
+        style={{ width: '520px', transform: 'translateY(-40%) rotate(-90deg)' }}
+      />
 
       <div className="max-w-3xl mx-auto">
 

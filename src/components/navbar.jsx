@@ -44,7 +44,7 @@ export default function Navbar({ isLanding, showFinalNav }) {
             </a>
             <a href="#coursemap" className="text-gray-500 hover:text-black transition-colors duration-200 pb-2">Course</a>
             <a href="#timeline" className="text-gray-500 hover:text-black transition-colors duration-200 pb-2">Timeline</a>
-            <a href="#register" className="text-gray-500 hover:text-black transition-colors duration-200 pb-2">Regist</a>
+            <a href="#register" className="text-gray-500 hover:text-black transition-colors duration-200 pb-2">Register</a>
           </div>
 
           {/* SISI KANAN / BURGER BUTTON (MOBILE) */}
