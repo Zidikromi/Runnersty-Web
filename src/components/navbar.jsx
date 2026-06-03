@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import logoHijau from '../Asset/LogoHijau.png';
 import logoPutih from '../Asset/LogoPutih.png';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
   { label: 'Events',   href: '#events'    },
@@ -115,45 +116,61 @@ useEffect(() => {
       </nav>
 
       {/* MOBILE SIDEBAR - Menggunakan !isSpecialPage */}
-      {!isSpecialPage && isOpen && (
-        <div className="fixed inset-0 z-[99] md:hidden h-[100dvh] w-full overflow-hidden">
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
-          <div className="absolute top-0 right-0 h-[100dvh] w-full  bg-transparent flex flex-col justify-between p-8 shadow-2xl">
-            <div className="flex justify-end">
-              <button onClick={() => setIsOpen(false)} className="text-white/50 hover:text-white transition-colors p-1" aria-label="Close Menu">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <div className="flex flex-col gap-2 my-auto">
-              {navLinks.map(({ label, href }, i) => {
-                const id = href.replace('#', '');
-                const isActive = activeSection === id;
-                return (
-                  <a
-                    key={href}
-                    href={href}
-                    onClick={() => setIsOpen(false)}
-                    className={`group flex items-center gap-3 py-3 border-b border-white/10 transition-all duration-200 ${isActive ? 'text-[#B8A678]' : 'text-white/70 hover:text-white'}`}
-                  >
-                    {/* <span className="font-sora text-[11px] tracking-widest opacity-40 w-5 text-right">
-                      {String(i + 1).padStart(2, '0')}
-                    </span> */}
-                    <span className="font-carsenz text-[28px] uppercase leading-none">{label}</span>
-                    {isActive && <span className="ml-auto text-[#B8A678] text-lg"></span>}
-                  </a>
-                );
-              })}
-            </div>
-            <div className="text-left">
-              <p className="font-sora text-[10px] tracking-widest uppercase text-white/20">
-                Run To Nature — 2026
-              </p>
-            </div>
-          </div>
+      <AnimatePresence>
+  {!isSpecialPage && isOpen && (
+    <div className="fixed inset-0 z-[99] md:hidden h-[100dvh] w-full overflow-hidden">
+      {/* Overlay dengan animasi fade */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm" 
+        onClick={() => setIsOpen(false)} 
+      />
+      
+      {/* Sidebar dengan animasi slide-in dari kanan */}
+      <motion.div 
+        initial={{ x: '100%' }}
+        animate={{ x: 0 }}
+        exit={{ x: '100%' }}
+        transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+        className="absolute top-0 right-0 h-[100dvh] w-full bg-transparent flex flex-col justify-between p-8 shadow-2xl"
+      >
+        <div className="flex justify-end">
+          <button onClick={() => setIsOpen(false)} className="text-white/50 hover:text-white transition-colors p-1" aria-label="Close Menu">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
-      )}
+        
+        <div className="flex flex-col gap-2 my-auto">
+          {navLinks.map(({ label, href }, i) => {
+            const id = href.replace('#', '');
+            const isActive = activeSection === id;
+            return (
+              <a
+                key={href}
+                href={href}
+                onClick={() => setIsOpen(false)}
+                className={`group flex items-center gap-3 py-3 border-b border-white/10 transition-all duration-200 ${isActive ? 'text-[#B8A678]' : 'text-white/70 hover:text-white'}`}
+              >
+                <span className="font-carsenz text-[38px] uppercase leading-none">{label}</span>
+                {isActive && <span className="ml-auto text-[#B8A678] text-lg"></span>}
+              </a>
+            );
+          })}
+        </div>
+        
+        <div className="text-left">
+          <p className="font-sora text-[15px] tracking-widest uppercase text-white/20">
+            Run To Nature — 2026
+          </p>
+        </div>
+      </motion.div>
+    </div>
+  )}
+</AnimatePresence>
     </>
   );
 }
