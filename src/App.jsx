@@ -53,7 +53,7 @@ function App() {
   }, []);
 
   return (
-    <div className="relative w-full h-auto bg-[#e8e2d0]">      
+    <div className="relative w-full h-auto bg-[#e8e2d0] overflox-x-hidden">      
       <style>{`
         .custom-smart-animate {
           transition: all 500ms cubic-bezier(0.25, 1, 0.5, 1);
