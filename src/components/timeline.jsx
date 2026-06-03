@@ -77,12 +77,12 @@ export default function Timeline() {
                       <p className="font-sora text-[12px] md:text-[13px] text-[#4A613E]  mt-1 md:whitespace-nowrap">{ev.desc}</p>
                     </div>
                   ) : (
-                    <p className="font-sora text-[22px] md:text-[27px] font-bold text-[#4A613E]">{ev.time}</p>
+                    <p className="font-sora text-[20px] md:text-[25px] font-bold text-[#4A613E]">{ev.time}</p>
                   )}
                 </div>
 
                 {/* Center dot */}
-                <div className="absolute left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#49613F] z-10 ring-[4px] ring-white shadow-md" />
+                <div className="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#49613F] z-10 ring-[4px] ring-white shadow-md" />
 
                 {/* Right column */}
                 <div className="w-1/2 pl-10 flex justify-start">
@@ -92,7 +92,7 @@ export default function Timeline() {
                       <p className="font-sora text-[12px] md:text-[13px] text-[#4A613E]  mt-1 md:whitespace-nowrap">{ev.desc}</p>
                     </div>
                   ) : (
-                    <p className="font-sora text-[22px] md:text-[27px] font-bold text-[#4A613E]">{ev.time}</p>
+                    <p className="font-sora text-[20px] md:text-[25px] font-bold text-[#4A613E]">{ev.time}</p>
                   )}
                 </div>
 

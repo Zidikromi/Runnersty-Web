@@ -1,10 +1,35 @@
-import React, { useState } from 'react';
-import logoHijau from '../Asset/LogoHijau.png'; 
+import React, { useState, useEffect } from 'react';
+import logoHijau from '../Asset/LogoHijau.png';
 import logoPutih from '../Asset/LogoPutih.png';
 
-// Tambahkan currentPage di dalam parameter destructuring props
-export default function Navbar({ isLanding, showFinalNav, navigateTo, currentPage }) { 
+const navLinks = [
+  { label: 'Events',   href: '#home'      },
+  { label: 'Course',   href: '#coursemap'  },
+  { label: 'Timeline', href: '#timeline'   },
+  { label: 'Regist',   href: '#register'   },
+];
+
+export default function Navbar({ isLanding, showFinalNav, navigateTo, currentPage }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    const sectionIds = ['home', 'coursemap', 'timeline', 'register'];
+    const observers = [];
+
+    sectionIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
+        { threshold: 0.3 }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach(o => o.disconnect());
+  }, []);
 
   const handleMobileClick = (e, target) => {
     setIsOpen(false); 
@@ -45,12 +70,23 @@ export default function Navbar({ isLanding, showFinalNav, navigateTo, currentPag
           {/* PERBAIKAN: Jika isPrivacyPage true, sembunyikan menu link desktop */}
           {!isPrivacyPage && (
             <div className="hidden md:flex items-center space-x-8 text-sm font-sora font-medium">
-              <a href="/events" className="text-black font-bold relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black">
-                Events
-              </a>
-              <a href="#coursemap" className="text-gray-500 hover:text-black transition-colors duration-200 pb-2">Course</a>
-              <a href="#timeline" className="text-gray-500 hover:text-black transition-colors duration-200 pb-2">Timeline</a>
-              <a href="#register" className="text-gray-500 hover:text-black transition-colors duration-200 pb-2">Regist</a>
+              {navLinks.map(({ label, href }) => {
+                const id = href.replace('#', '');
+                const isActive = activeSection === id;
+                return (
+                  <a
+                    key={href}
+                    href={href}
+                    className={`relative pb-2 transition-colors duration-200 ${
+                      isActive
+                        ? 'text-black font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black'
+                        : 'text-gray-500 hover:text-black'
+                    }`}
+                  >
+                    {label}
+                  </a>
+                );
+              })}
             </div>
           )}
 

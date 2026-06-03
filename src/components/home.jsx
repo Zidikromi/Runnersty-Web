@@ -1,10 +1,11 @@
 import React from 'react';
-import background from '../Asset/bg.jpeg';
+import background from '../Asset/home-bg.jpeg';
 import RunnerstyLogoatas from '../Asset/RunnerstyLogoWhite.png';
 import logoChanaya from '../Asset/Chanayalogo.avif';
 import logoKahf from '../Asset/logokahf.png';
 import logoSrc from '../Asset/srclogo.png';
 import Countdown from 'react-countdown';
+
 
 export default function Home() {
   // Tentukan tanggal target event Anda di sini (Format: YYYY-MM-DDTHH:mm:ss)
