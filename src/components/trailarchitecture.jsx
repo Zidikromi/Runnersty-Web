@@ -95,7 +95,7 @@ export default function TrailArchitecture() {
                 {/* Bawah: Nomor Outlined */}
                 <div>
                   <span
-                    className="text-[80px] font-black font-carsenz leading-none text-transparent"
+                    className="text-[52px] font-black font-sora leading-none text-transparent"
                     style={{ WebkitTextStroke: '1px rgba(255, 255, 255, 0.9)' }}
                   >
                     {card.num}

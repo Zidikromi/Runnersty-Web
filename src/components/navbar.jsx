@@ -35,12 +35,12 @@ export default function Navbar({ isLanding, showFinalNav }) { // Terima showFina
           {/* SISI TENGAH-KANAN (DESKTOP) */}
           <div className={`hidden md:flex items-center space-x-8 text-sm font-sora font-medium transition-all duration-500 delay-200 ${isLanding ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'
             }`}>
-            <a href="/events" className="text-black font-bold relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black">
+            <a href="#home" className="text-black font-bold relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black">
               Events
             </a>
             <a href="#coursemap" className="text-gray-500 hover:text-black transition-colors duration-200 pb-2">Course</a>
             <a href="#timeline" className="text-gray-500 hover:text-black transition-colors duration-200 pb-2">Timeline</a>
-            <a href="#register" className="text-gray-500 hover:text-black transition-colors duration-200 pb-2">Resgist</a>
+            <a href="#register" className="text-gray-500 hover:text-black transition-colors duration-200 pb-2">Register</a>
           </div>
 
           {/* SISI KANAN (MOBILE) */}

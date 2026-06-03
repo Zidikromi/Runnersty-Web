@@ -20,7 +20,7 @@ export default function Home() {
       );
     } else {
       return (
-       <div className="flex gap-2 sm:gap-4 text-white md:pl-8 mb-6 select-none max-w-sm ">
+      <div className="flex gap-2 sm:gap-4 text-white md:pl-8 mb-6 select-none max-w-sm ">
   {/* Days */}
   <div className="flex flex-col items-center min-w-[45px] sm:min-w-[60px]">
     <span className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wider font-sora">
@@ -64,8 +64,9 @@ export default function Home() {
   };
 
   return (
-    <div 
-      style={{ 
+    <div
+      id="home"
+      style={{
         backgroundImage: `linear-gradient(to bottom, 
           rgba(10, 22, 8, 0.3) 0%, 
           rgba(10, 22, 8, 0.5) 50%, 
