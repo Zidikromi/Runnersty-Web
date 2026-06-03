@@ -39,7 +39,7 @@ const baseSponsors = [
   const infiniteSponsors = [...baseSponsors, ...baseSponsors, ...baseSponsors];
 
   return (
-    <div className="w-full bg-[#B8A578] py-16 flex flex-col items-center font-sans overflow-hidden">
+    <div className="w-full bg-[#B8A678] py-16 flex flex-col items-center font-sans overflow-hidden">
       
       {/* SECTION 1: UTAMA (RESPONSIVE GRID) */}
       <div className="grid grid-cols-3 gap-10 sm:gap-8 max-w-4xl w-full text-center items-start mb-14 px-6">
@@ -99,7 +99,7 @@ const baseSponsors = [
             className="overflow-hidden"
             speed={40}
             gradient={true}
-            gradientColor="#baa578" 
+            gradientColor="#b8A578" 
             gradientWidth={80}
             pauseOnHover={false}
           >
