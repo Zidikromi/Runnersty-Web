@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import bg1 from '../Asset/bg1.jpeg';
-import bgcourse from '../Asset/PTTERN1.png';
+import bgcourse from '../Asset/PTTERN5.png';
 import RaceRulesModal from './racerulesmodal';
 import runnerstyLogoWhite from '../Asset/RunnerstyLogoWhite.png';
 import logokahf from '../Asset/logokahf.png';
@@ -45,13 +45,13 @@ export default function CourseMap() {
   return (
     <section id="coursemap" className="w-full py-14 px-6 md:px-12 overflow-hidden relative" style={{ backgroundImage: `url(${bgcourse})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
 
-      <div className="absolute -bottom-16 -left-28 w-[200px] h-[200px] md:w-[320px] md:h-[320px] opacity-10 pointer-events-none select-none">
+      {/* <div className="absolute -bottom-16 -left-28 w-[200px] h-[200px] md:w-[320px] md:h-[320px] opacity-10 pointer-events-none select-none">
         <img src={runnerstyLogoWhite} alt="" className="w-full h-full object-contain" />
-      </div>
+      </div> */}
 
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 relative z-10">
 
-        <div className="flex-1 flex flex-col gap-5">
+        <div className="flex-1 flex flex-col gap-5 rounded-3xl p-8 border border-white/20 backdrop-blur-md" style={{ background: 'rgba(20,40,15,0.65)' }}>
 
           <h2 className="uppercase font-carsenz text-[70px] md:text-[72px] leading-none  text-[#E8E2D0]">
             The Course<br />Map
