@@ -1,6 +1,6 @@
 export default function Register() {
   return (
-    <section className="w-full bg-[#E8E2D0] py-14 px-6 md:px-16">
+    <section id="register" className="w-full bg-[#E8E2D0] py-14 px-6 md:px-16">
 
       <div className="max-w-4xl mx-auto bg-[#4A613E] rounded-3xl px-8 md:px-16 py-14 md:py-16 flex flex-col items-center text-center gap-6">
 

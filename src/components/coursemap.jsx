@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import bg1 from '../Asset/bg1.jpeg';
+import RaceRulesModal from './racerulesmodal';
 import runnerstyLogoWhite from '../Asset/RunnerstyLogoWhite.png';
 import logokahf from '../Asset/logokahf.png';
 import srclogo from '../Asset/srclogo.png';
@@ -37,8 +39,10 @@ const infoItems = [
 ];
 
 export default function CourseMap() {
+  const [showRules, setShowRules] = useState(false);
+
   return (
-    <section className="w-full bg-[#1e2d16] py-14 px-6 md:px-12 overflow-hidden relative">
+    <section id="coursemap" className="w-full bg-[#1e2d16] py-14 px-6 md:px-12 overflow-hidden relative">
 
       <div className="absolute -bottom-16 -left-28 w-[200px] h-[200px] md:w-[320px] md:h-[320px] opacity-10 pointer-events-none select-none">
         <img src={runnerstyLogoWhite} alt="" className="w-full h-full object-contain" />
@@ -75,14 +79,14 @@ export default function CourseMap() {
             ))}
           </div>
 
-          <a
-            href="https://tiketmart.com"
-            target="_blank"
-            rel="noreferrer"
+          <button
+            onClick={() => setShowRules(true)}
             className="mt-2 w-fit bg-[#E8E2D0] hover:bg-white text-[#1e2d16] font-sora font-semibold text-[13px] py-2.5 px-6 rounded-xl flex items-center gap-2 active:scale-90 transition-all"
           >
             Race Rules <span>→</span>
-          </a>
+          </button>
+
+          {showRules && <RaceRulesModal onClose={() => setShowRules(false)} />}
 
         </div>
 
