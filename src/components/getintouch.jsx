@@ -15,10 +15,11 @@ export default function GetInTouch() {
 
         {/* KIRI: heading + list */}
         <div className="flex-1 w-full">
-          <h2 className="font-carsenz text-[42px] md:text-[60px] text-[#2B3E2A] uppercase leading-none mb-3">
+          {/* text-center untuk mobile, md:text-left untuk desktop */}
+          <h2 className="font-carsenz text-[42px] md:text-[60px] text-[#2B3E2A] uppercase leading-none mb-3 text-center md:text-left">
             Get In Touch
           </h2>
-          <p className="font-sora text-[13px] text-[#2B3E2A] opacity-60 mb-8">
+          <p className="font-sora text-[13px] text-[#2B3E2A] opacity-60 mb-8 text-center md:text-left">
             Follow our journey and stay updated on all things Runnersty.
           </p>
 
@@ -47,7 +48,7 @@ export default function GetInTouch() {
           </div>
         </div>
 
-        {/* KANAN: Dekorasi Interaktif (Bukan model footer konvensional lagi) */}
+        {/* KANAN: Dekorasi Interaktif */}
         <div className="flex-1 w-full flex flex-col justify-center">
           <div className="relative w-full bg-[#2D3A1F] text-[#E8E2D0] p-8 md:p-10 rounded-2xl overflow-hidden shadow-xl group/card">
 
@@ -71,8 +72,9 @@ export default function GetInTouch() {
               Indonesia — 2026
             </p>
 
+            {/* Tombol dengan warna emas asli + perilaku interaktif */}
             <a
-              href="https://maps.app.goo.gl/vPPnjm3L5WPAxmzFA" 
+              href="https://maps.google.com"
               target="_blank"
               rel="noreferrer"
               className="w-fit mt-2 bg-[#B8A678] hover:bg-[#a39267] text-[#2D3A1F] font-sora font-semibold text-[13px] py-3 px-7 rounded-xl flex items-center gap-2 border border-[#E8E2D0]/20 active:scale-90 transition-all shadow-md"
