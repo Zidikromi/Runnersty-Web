@@ -50,6 +50,11 @@ export default function Navbar({ isLanding, showFinalNav, navigateTo, currentPag
     return () => observer.disconnect();
   }, []);
 
+  const handleNavLinkClick = (id) => {
+  setActiveSection(id);
+  setIsOpen(false); // Tutup sidebar jika di mobile
+};
+
   // Variabel untuk menyembunyikan menu di halaman selain home
   const isSpecialPage = currentPage !== 'home';
 
@@ -68,28 +73,30 @@ export default function Navbar({ isLanding, showFinalNav, navigateTo, currentPag
             </div>
           </div>
 
-          {/* DESKTOP MENU - Menggunakan !isSpecialPage */}
-          {!isSpecialPage && (
-            <div className="hidden md:flex items-center space-x-8 text-sm font-sora font-medium">
-              {navLinks.map(({ label, href }) => {
-                const id = href.replace('#', '');
-                const isActive = activeSection === id;
-                return (
-                  <a
-                    key={href}
-                    href={href}
-                    className={`relative pb-2 transition-colors duration-200 ${
-                      isActive
-                        ? 'text-black font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black'
-                        : 'text-gray-500 hover:text-black'
-                    }`}
-                  >
-                    {label}
-                  </a>
-                );
-              })}
-            </div>
-          )}
+          {/* DESKTOP MENU */}
+{!isSpecialPage && (
+  <div className="hidden md:flex items-center space-x-8 text-sm font-sora font-medium">
+    {navLinks.map(({ label, href }) => {
+      const id = href.replace('#', '');
+      const isActive = activeSection === id;
+      return (
+        <a
+          key={href}
+          href={href}
+          // TAMBAHKAN BARIS INI
+          onClick={() => handleNavLinkClick(id)} 
+          className={`relative pb-2 transition-all duration-300 ${
+            isActive
+              ? 'text-black font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black'
+              : 'text-gray-500 hover:text-black'
+          }`}
+        >
+          {label}
+        </a>
+      );
+    })}
+  </div>
+)}
 
           {/* MOBILE BURGER - Menggunakan !isSpecialPage */}
           {!isSpecialPage && (
@@ -110,7 +117,7 @@ export default function Navbar({ isLanding, showFinalNav, navigateTo, currentPag
       {!isSpecialPage && isOpen && (
         <div className="fixed inset-0 z-[99] md:hidden h-[100dvh] w-full overflow-hidden">
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
-          <div className="absolute top-0 right-0 h-[100dvh] w-[80%] max-w-xs bg-transparent flex flex-col justify-between p-8 shadow-2xl">
+          <div className="absolute top-0 right-0 h-[100dvh] w-full  bg-transparent flex flex-col justify-between p-8 shadow-2xl">
             <div className="flex justify-end">
               <button onClick={() => setIsOpen(false)} className="text-white/50 hover:text-white transition-colors p-1" aria-label="Close Menu">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
