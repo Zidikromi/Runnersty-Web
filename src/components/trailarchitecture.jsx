@@ -4,7 +4,6 @@ import trail2 from '../Asset/2.TRAIL ARCHITEC.png';
 import trail3 from '../Asset/3.TRAIL ARCHITEC.png';
 import trail4 from '../Asset/4.TRAIL ARCHITEC.png';
 import trail5 from '../Asset/5 TRAIL ARCHITEC.png';
-import asset13 from '../Asset/Asset 13ICON.png';
 
 const cards = [
   {
