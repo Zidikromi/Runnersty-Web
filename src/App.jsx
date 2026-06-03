@@ -99,7 +99,7 @@ function App() {
 
       {/* NAVBAR */}
       <div className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ease-in-out ${
-        isScrolled || currentPage === 'home' ? 'bg-[#2D3A1F] md:bg-transparent shadow-md md:shadow-none' : 'bg-transparent'
+        isScrolled || currentPage === 'home' ? 'bg-transparent md:bg-transparent md:shadow-none' : 'bg-transparent'
       } ${
         isLanding 
           ? '-translate-y-full' 
