@@ -74,7 +74,7 @@ export default function GetInTouch() {
 
             {/* Tombol dengan warna emas asli + perilaku interaktif */}
             <a
-              href="https://maps.google.com"
+              href="https://maps.app.goo.gl/6es8Gjcc53BEaM737"
               target="_blank"
               rel="noreferrer"
               className="w-fit mt-2 bg-[#B8A678] hover:bg-[#a39267] text-[#2D3A1F] font-sora font-semibold text-[13px] py-3 px-7 rounded-xl flex items-center gap-2 border border-[#E8E2D0]/20 active:scale-90 transition-all shadow-md"
