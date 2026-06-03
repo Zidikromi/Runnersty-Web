@@ -28,32 +28,33 @@ export default function Navbar({ isLanding, showFinalNav, navigateTo, currentPag
     };
   }, [isOpen]);
 
-  // Observer untuk mendeteksi scroll dan mengupdate activeSection
-  useEffect(() => {
-    const sectionIds = navLinks.map(link => link.href.replace('#', ''));
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.3, rootMargin: '-20% 0px -60% 0px' }
-    );
+// Ganti bagian useEffect observer Anda dengan ini:
+useEffect(() => {
+  const sectionIds = navLinks.map(link => link.href.replace('#', ''));
+  
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        // Jika elemen sedang terlihat lebih dari 50%, jadikan dia active
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    },
+    { 
+      threshold: 0.5, // Indikator akan berpindah saat elemen menempati 50% layar
+      rootMargin: '-10% 0px -40% 0px' // Memberikan ruang di atas/bawah agar lebih akurat
+    }
+  );
 
-    sectionIds.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
+  sectionIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
 
-    return () => observer.disconnect();
-  }, []);
+  return () => observer.disconnect();
+}, []);
 
-  const handleNavLinkClick = (id) => {
-  setActiveSection(id);
-  setIsOpen(false); // Tutup sidebar jika di mobile
-};
 
   // Variabel untuk menyembunyikan menu di halaman selain home
   const isSpecialPage = currentPage !== 'home';
@@ -75,7 +76,7 @@ export default function Navbar({ isLanding, showFinalNav, navigateTo, currentPag
 
           {/* DESKTOP MENU */}
 {!isSpecialPage && (
-  <div className="hidden md:flex items-center space-x-8 text-sm font-sora font-medium">
+  <div className="hidden md:flex items-center space-x-8 text-sm font-sora font-bold">
     {navLinks.map(({ label, href }) => {
       const id = href.replace('#', '');
       const isActive = activeSection === id;
@@ -83,8 +84,8 @@ export default function Navbar({ isLanding, showFinalNav, navigateTo, currentPag
         <a
           key={href}
           href={href}
-          // TAMBAHKAN BARIS INI
-          onClick={() => handleNavLinkClick(id)} 
+          // HAPUS setActiveSection(id) DI SINI
+          onClick={() => setIsOpen(false)} 
           className={`relative pb-2 transition-all duration-300 ${
             isActive
               ? 'text-black font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black'
