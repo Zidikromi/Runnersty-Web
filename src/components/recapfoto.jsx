@@ -9,48 +9,37 @@ import bg1 from '../Asset/bg1.jpeg';
 const GAP = 10;
 const H   = 480;
 
+// Utility string biar kode di bawah lebih bersih dan konsisten
+const imgClass = "w-full h-full object-cover transition-all duration-500 ease-out hover:scale-105";
+
 const slides = [
   // Layout A: satu besar atas + dua kecil bawah
   () => (
     <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gridTemplateRows:'3fr 2fr', gap:GAP, height:H }}>
       <div style={{ gridColumn:'1/3' }} className="rounded-2xl overflow-hidden">
-        <img src={bg} alt="" className="w-full h-full object-cover" />
+        <img src={bg} alt="" className={imgClass} />
       </div>
       <div className="rounded-2xl overflow-hidden">
-        <img src={bg1} alt="" className="w-full h-full object-cover" />
+        <img src={bg1} alt="" className={imgClass} />
       </div>
       <div className="rounded-2xl overflow-hidden">
-        <img src={bg} alt="" className="w-full h-full object-cover object-bottom" />
+        <img src={bg} alt="" className={`${imgClass} object-bottom`} />
       </div>
     </div>
   ),
-
-  // Layout B: tiga portrait sejajar staggered
-  // () => (
-  //   <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gridTemplateRows:'1fr 10fr 1fr', gap:GAP, height:H }}>
-  //     <div style={{ gridRow:'1/3' }} className="rounded-2xl overflow-hidden">
-  //       <img src={bg1} alt="" className="w-full h-full object-cover object-top" />
-  //     </div>
-  //     <div style={{ gridRow:'2/4' }} className="rounded-2xl overflow-hidden">
-  //       <img src={bg} alt="" className="w-full h-full object-cover" />
-  //     </div>
-  //     <div style={{ gridRow:'1/3' }} className="rounded-2xl overflow-hidden">
-  //       <img src={bg1} alt="" className="w-full h-full object-cover object-bottom" />
-  //     </div>
-  //   </div>
-  // ),
 
   // Layout C: kiri penuh + kanan dua asimetris
   () => (
     <div style={{ display:'grid', gridTemplateColumns:'55% 45%', gridTemplateRows:'11fr 9fr', gap:GAP, height:H }}>
       <div style={{ gridRow:'1/3' }} className="rounded-2xl overflow-hidden">
-        <img sr c={bg} alt="" className="w-full h-full object-cover" />
+        {/* Typo 'sr c' sudah diperbaiki menjadi 'src' */}
+        <img src={bg} alt="" className={imgClass} />
       </div>
       <div className="rounded-2xl overflow-hidden">
-        <img src={bg1} alt="" className="w-full h-full object-cover object-top" />
+        <img src={bg1} alt="" className={`${imgClass} object-top`} />
       </div>
       <div className="rounded-2xl overflow-hidden">
-        <img src={bg} alt="" className="w-full h-full object-cover object-right" />
+        <img src={bg} alt="" className={`${imgClass} object-right`} />
       </div>
     </div>
   ),
@@ -59,13 +48,13 @@ const slides = [
   () => (
     <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gridTemplateRows:'2fr 3fr', gap:GAP, height:H }}>
       <div className="rounded-2xl overflow-hidden">
-        <img src={bg1} alt="" className="w-full h-full object-cover object-left" />
+        <img src={bg1} alt="" className={`${imgClass} object-left`} />
       </div>
       <div className="rounded-2xl overflow-hidden">
-        <img src={bg} alt="" className="w-full h-full object-cover object-right" />
+        <img src={bg} alt="" className={`${imgClass} object-right`} />
       </div>
       <div style={{ gridColumn:'1/3' }} className="rounded-2xl overflow-hidden">
-        <img src={bg1} alt="" className="w-full h-full object-cover object-center" />
+        <img src={bg1} alt="" className={`${imgClass} object-center`} />
       </div>
     </div>
   ),

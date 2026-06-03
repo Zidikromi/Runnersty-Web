@@ -65,7 +65,7 @@ export default function Home() {
 
   return (
     <div
-      id="home"
+      id="events"
       style={{
         backgroundImage: `linear-gradient(to bottom, 
           rgba(10, 22, 8, 0.3) 0%, 

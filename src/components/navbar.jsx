@@ -5,13 +5,29 @@ import logoPutih from '../Asset/LogoPutih.png';
 // Tambahkan currentPage di dalam parameter destructuring props
 export default function Navbar({ isLanding, showFinalNav, navigateTo, currentPage }) { 
   const [isOpen, setIsOpen] = useState(false);
+  // Tambahkan state untuk melacak menu yang sedang aktif
+  const [activeMenu, setActiveMenu] = useState('events');
 
   const handleMobileClick = (e, target) => {
+    setActiveMenu(target);
     setIsOpen(false); 
+  };
+
+  const handleDesktopClick = (target) => {
+    setActiveMenu(target);
   };
 
   // Variabel pembantu untuk mengecek apakah sedang di page privacy
   const isPrivacyPage = currentPage === 'privacy';
+
+  // Helper function untuk memberikan styling class secara dinamis pada desktop
+  const getDesktopClass = (menuName) => {
+    const baseClass = "transition-colors duration-200 pb-2 relative";
+    if (activeMenu === menuName) {
+      return `${baseClass} text-black font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black`;
+    }
+    return `${baseClass} text-gray-500 hover:text-black`;
+  };
 
   return (
     <>
@@ -42,20 +58,40 @@ export default function Navbar({ isLanding, showFinalNav, navigateTo, currentPag
           </div>
 
           {/* SISI TENGAH-KANAN (DESKTOP) */}
-          {/* PERBAIKAN: Jika isPrivacyPage true, sembunyikan menu link desktop */}
           {!isPrivacyPage && (
             <div className="hidden md:flex items-center space-x-8 text-sm font-sora font-medium">
-              <a href="/events" className="text-black font-bold relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-black">
+              <a 
+                href="#events" 
+                onClick={() => handleDesktopClick('events')}
+                className={getDesktopClass('events')}
+              >
                 Events
               </a>
-              <a href="#coursemap" className="text-gray-500 hover:text-black transition-colors duration-200 pb-2">Course</a>
-              <a href="#timeline" className="text-gray-500 hover:text-black transition-colors duration-200 pb-2">Timeline</a>
-              <a href="#register" className="text-gray-500 hover:text-black transition-colors duration-200 pb-2">Regist</a>
+              <a 
+                href="#coursemap" 
+                onClick={() => handleDesktopClick('course')}
+                className={getDesktopClass('course')}
+              >
+                Course
+              </a>
+              <a 
+                href="#timeline" 
+                onClick={() => handleDesktopClick('timeline')}
+                className={getDesktopClass('timeline')}
+              >
+                Timeline
+              </a>
+              <a 
+                href="#register" 
+                onClick={() => handleDesktopClick('regist')}
+                className={getDesktopClass('regist')}
+              >
+                Regist
+              </a>
             </div>
           )}
 
           {/* SISI KANAN / BURGER BUTTON (MOBILE) */}
-          {/* PERBAIKAN: Jika isPrivacyPage true, sembunyikan tombol burger mobile */}
           {!isPrivacyPage && (
             <div className={`md:hidden flex items-center transition-opacity duration-500 ${isLanding ? 'opacity-0' : 'opacity-100'}`}>
               <button
@@ -74,7 +110,6 @@ export default function Navbar({ isLanding, showFinalNav, navigateTo, currentPag
       </nav>
 
       {/* SIDEBAR MOBILE FULL-SCREEN */}
-      {/* PERBAIKAN: Sidebar hanya akan aktif jika tidak berada di page privacy */}
       {!isPrivacyPage && (
         <div className={`fixed inset-0 z-[99] md:hidden transition-all duration-300 ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
@@ -93,11 +128,41 @@ export default function Navbar({ isLanding, showFinalNav, navigateTo, currentPag
             </div>
 
             <div className="flex flex-col space-y-6 text-3xl font-black tracking-wide uppercase my-auto pl-4">
-              <a href="/events" onClick={handleMobileClick} className="text-[#C8E0B8] hover:opacity-80 transition-opacity">Event</a>
-              <a href="#coursemap" onClick={handleMobileClick} className="text-white hover:opacity-80 transition-opacity">Maps</a>
-              <a href="#timeline" onClick={handleMobileClick} className="text-white hover:opacity-80 transition-opacity">Timeline</a>
-              <a href="#register" onClick={handleMobileClick} className="text-white hover:opacity-80 transition-opacity">Regist</a>
-              <a href="/contact" onClick={handleMobileClick} className="text-white hover:opacity-80 transition-opacity">Contact</a>
+              <a 
+                href="#events" 
+                onClick={(e) => handleMobileClick(e, 'events')} 
+                className={`transition-opacity ${activeMenu === 'events' ? 'text-[#C8E0B8]' : 'text-white'} hover:opacity-80`}
+              >
+                Event
+              </a>
+              <a 
+                href="#coursemap" 
+                onClick={(e) => handleMobileClick(e, 'course')} 
+                className={`transition-opacity ${activeMenu === 'course' ? 'text-[#C8E0B8]' : 'text-white'} hover:opacity-80`}
+              >
+                Maps
+              </a>
+              <a 
+                href="#timeline" 
+                onClick={(e) => handleMobileClick(e, 'timeline')} 
+                className={`transition-opacity ${activeMenu === 'timeline' ? 'text-[#C8E0B8]' : 'text-white'} hover:opacity-80`}
+              >
+                Timeline
+              </a>
+              <a 
+                href="#register" 
+                onClick={(e) => handleMobileClick(e, 'regist')} 
+                className={`transition-opacity ${activeMenu === 'regist' ? 'text-[#C8E0B8]' : 'text-white'} hover:opacity-80`}
+              >
+                Regist
+              </a>
+              <a 
+                href="/contact" 
+                onClick={(e) => handleMobileClick(e, 'contact')} 
+                className={`transition-opacity ${activeMenu === 'contact' ? 'text-[#C8E0B8]' : 'text-white'} hover:opacity-80`}
+              >
+                Contact
+              </a>
             </div>
 
             <div className="text-center text-[10px] tracking-widest text-white/30 uppercase font-medium pb-4">
