@@ -129,11 +129,11 @@ export default function Navbar({ isLanding, showFinalNav, navigateTo, currentPag
                     onClick={() => setIsOpen(false)}
                     className={`group flex items-center gap-3 py-3 border-b border-white/10 transition-all duration-200 ${isActive ? 'text-[#B8A678]' : 'text-white/70 hover:text-white'}`}
                   >
-                    <span className="font-sora text-[11px] tracking-widest opacity-40 w-5 text-right">
+                    {/* <span className="font-sora text-[11px] tracking-widest opacity-40 w-5 text-right">
                       {String(i + 1).padStart(2, '0')}
-                    </span>
+                    </span> */}
                     <span className="font-carsenz text-[28px] uppercase leading-none">{label}</span>
-                    {isActive && <span className="ml-auto text-[#B8A678] text-lg">→</span>}
+                    {isActive && <span className="ml-auto text-[#B8A678] text-lg"></span>}
                   </a>
                 );
               })}
