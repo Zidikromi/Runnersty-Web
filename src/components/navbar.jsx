@@ -32,7 +32,7 @@ export default function Navbar({ isLanding, showFinalNav, navigateTo, currentPag
     return () => observers.forEach(o => o.disconnect());
   }, []);
 
-  const isPrivacyPage = currentPage === 'privacy';
+const isSpecialPage = currentPage !== 'home';
 
   return (
     <>

@@ -5,6 +5,7 @@ import Home from './components/home';
 import RaceStats from './components/racestats';
 import Partners from './components/partners';
 import TrailArchitecture from './components/trailarchitecture';
+import TermsOfUse from './components/termsofuse'; 
 import CourseMap from './components/coursemap';
 import Timeline from './components/timeline';
 import RecapFoto from './components/recapfoto';
@@ -98,7 +99,7 @@ function App() {
 
       {/* NAVBAR */}
       <div className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ease-in-out ${
-        isScrolled || currentPage === 'privacy' ? 'bg-[#2D3A1F] md:bg-transparent shadow-md md:shadow-none' : 'bg-transparent'
+        isScrolled || currentPage === 'home' ? 'bg-[#2D3A1F] md:bg-transparent shadow-md md:shadow-none' : 'bg-transparent'
       } ${
         isLanding 
           ? '-translate-y-full' 
@@ -109,35 +110,34 @@ function App() {
         <Navbar isLanding={isLanding} showFinalNav={showFinalNav} navigateTo={navigateTo} currentPage={currentPage} />
       </div>
 
-      {/* PROSES PERGANTIAN HALAMAN */}
       {currentPage === 'home' ? (
-        <>
-          {/* TAMPILAN LANDING PAGE UTAMA */}
-          <div className={`pt-0 md:pt-[97px] transition-all duration-1000 cubic-bezier(0.25, 1, 0.5, 1) delay-200 ${
-            isLanding ? 'opacity-0 blur-md' : 'opacity-100 blur-0'
-          }`}>
-            <Home />
-          </div>
+  <>
+    {/* TAMPILAN LANDING PAGE UTAMA */}
+    <div className={`pt-0 md:pt-[97px] transition-all duration-1000 cubic-bezier(0.25, 1, 0.5, 1) delay-200 ${
+      isLanding ? 'opacity-0 blur-md' : 'opacity-100 blur-0'
+    }`}>
+      <Home />
+    </div>
 
-          <ScrollAnimate direction="left"><RaceStats /></ScrollAnimate>
-          <ScrollAnimate direction="right"><TrailArchitecture /></ScrollAnimate>
-          <ScrollAnimate direction="left"><CourseMap /></ScrollAnimate>
-          <ScrollAnimate direction="right"><Timeline /></ScrollAnimate>
-          <ScrollAnimate direction="left"><RecapFoto /></ScrollAnimate>
-          <ScrollAnimate direction="right"><Testimonials /></ScrollAnimate>
-          <ScrollAnimate direction="left"><Register /></ScrollAnimate>
-          <ScrollAnimate direction="up"><GetInTouch /></ScrollAnimate>
+    <ScrollAnimate direction="left"><RaceStats /></ScrollAnimate>
+    <ScrollAnimate direction="right"><TrailArchitecture /></ScrollAnimate>
+    <ScrollAnimate direction="left"><CourseMap /></ScrollAnimate>
+    <ScrollAnimate direction="right"><Timeline /></ScrollAnimate>
+    <ScrollAnimate direction="left"><RecapFoto /></ScrollAnimate>
+    <ScrollAnimate direction="right"><Testimonials /></ScrollAnimate>
+    <ScrollAnimate direction="left"><Register /></ScrollAnimate>
+    <ScrollAnimate direction="up"><GetInTouch /></ScrollAnimate>
 
-          <ScrollAnimate direction="up">
-            <Partners />
-            <Footer navigateTo={navigateTo} />
-          </ScrollAnimate>
-        </>
-      ) : (
-        /* TAMPILAN PAGE BARU PRIVACY POLICY YANG TERPISAH */
-        <PrivacyPolicy navigateTo={navigateTo} />
-      )}
-
+    <ScrollAnimate direction="up">
+      <Partners />
+      <Footer navigateTo={navigateTo} />
+    </ScrollAnimate>
+  </>
+) : currentPage === 'privacy' ? (
+  <PrivacyPolicy navigateTo={navigateTo} />
+) : (
+  <TermsOfUse navigateTo={navigateTo} /> /* <--- INI HALAMAN TERMS OF USE */
+)}
       {/* LOGO SPLASH SCREEN */}
       <div className={`fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none custom-smart-animate ${isLanding ? 'opacity-100 scale-125 blur-0' : 'opacity-0 scale-95 blur-sm'}`}>
         <div className="h-[56px] w-[168px] relative overflow-hidden">

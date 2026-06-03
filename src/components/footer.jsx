@@ -32,9 +32,12 @@ export default function Footer({ navigateTo }) {
             Privacy Policy
           </button>
 
-          <a href="#terms" className="underline hover:text-black transition-colors whitespace-nowrap">
+          <button 
+            onClick={() => navigateTo('terms')} 
+            className="underline hover:text-black transition-colors whitespace-nowrap cursor-pointer focus:outline-none"
+          >
             Terms of Use
-          </a>
+          </button>
           {/* <a href="#rules" className="underline hover:text-black transition-colors whitespace-nowrap">
             Race Rules
           </a> */}
