@@ -1,6 +1,7 @@
 import React from 'react';
 import bg from '../Asset/bg.jpeg';
 import bg1 from '../Asset/bg1.jpeg';
+import asset13 from '../Asset/Asset 13ICON.png';
 
 const cards = [
   {
@@ -37,7 +38,15 @@ const cards = [
 
 export default function TrailArchitecture() {
   return (
-    <section className="w-full bg-[#E8E2D0] py-16 px-6 md:px-16 font-sora">
+    <section className="w-full bg-[#E8E2D0] py-16 px-6 md:px-16 font-sora relative overflow-hidden">
+
+      {/* Dekorasi icon kanan atas */}
+      {/* <img
+        src={asset13}
+        alt=""
+        className="absolute top-[-40px] right-[-40px] w-[320px] md:w-[420px] opacity-15 select-none pointer-events-none object-contain"
+      /> */}
+
       <div className="max-w-6xl mx-auto">
 
         {/* Heading + Subtitle */}
