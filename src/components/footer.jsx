@@ -32,9 +32,9 @@ export default function Footer({ navigateTo }) {
             Privacy Policy
           </button>
 
-          {/* <a href="#terms" className="underline hover:text-black transition-colors whitespace-nowrap">
-            Terms of Services
-          </a> */}
+          <a href="#terms" className="underline hover:text-black transition-colors whitespace-nowrap">
+            Terms of Use
+          </a>
           {/* <a href="#rules" className="underline hover:text-black transition-colors whitespace-nowrap">
             Race Rules
           </a> */}

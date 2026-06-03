@@ -12,6 +12,7 @@ import Testimonials from './components/testimonials';
 import Register from './components/register';
 import Footer from './components/footer';
 import ScrollAnimate from './components/Scrollanimate';
+import GetInTouch from './components/getintouch';
 
 // IMPORT PAGE BARU YANG TADI KITA BUAT DI SINI
 import PrivacyPolicy from './components/privacypolicy';
@@ -125,6 +126,7 @@ function App() {
           <ScrollAnimate direction="left"><RecapFoto /></ScrollAnimate>
           <ScrollAnimate direction="right"><Testimonials /></ScrollAnimate>
           <ScrollAnimate direction="left"><Register /></ScrollAnimate>
+          <ScrollAnimate direction="up"><GetInTouch /></ScrollAnimate>
 
           <ScrollAnimate direction="up">
             <Partners />
