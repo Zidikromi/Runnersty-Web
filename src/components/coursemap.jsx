@@ -44,7 +44,7 @@ export default function CourseMap() {
   const [showRules, setShowRules] = useState(false);
 
   return (
-    <section id="coursemap" className="w-full py-14 px-6 md:px-12 overflow-hidden relative" style={{ backgroundImage: `url(${bgcourse})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <section id="coursemap" className="w-full py-14 px-6 md:px-12 overflow-hidden relative bg-[#E8E2D0]" >
       
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 relative z-10">
 
