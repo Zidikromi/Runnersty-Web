@@ -12,7 +12,7 @@ const events = [
 export default function Timeline() {
   return (
     <section id="timeline" className="w-full bg-[#E8E2D0] py-14 px-6 md:px-12 relative overflow-hidden">
-      
+
       {/* Dekorasi logo */}
       <img
         src={LogoPutih}
@@ -48,7 +48,7 @@ export default function Timeline() {
 
           <div className="flex flex-col">
             {events.map((ev, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -57,9 +57,9 @@ export default function Timeline() {
                 className="relative flex items-center min-h-[120px]"
               >
                 {/* Left column */}
-                <div className="w-1/2 pr-10 flex justify-end items-center">
+                <div className="w-1/2 pr-10 flex justify-end items-center text-right">
                   {ev.align === 'left' ? (
-                    <div className="text-right">
+                    <div>
                       <p className="font-sora font-bold text-[22px] md:text-[27px] text-[#4A613E]">{ev.title}</p>
                       <p className="font-sora text-[12px] md:text-[13px] text-[#4A613E] mt-1">{ev.desc}</p>
                     </div>
@@ -68,18 +68,18 @@ export default function Timeline() {
                   )}
                 </div>
 
-                {/* Center dot dengan posisi absolute tepat di tengah (vertikal & horizontal) */}
-               <motion.div 
-  initial={{ scale: 0 }}
-  whileInView={{ scale: 1 }}
-  transition={{ delay: 0.3 + (i * 0.1), type: "spring", stiffness: 300 }}
-  className="relative w-8 h-8 rounded-full bg-[#49613F] z-10 ring-[4px] ring-white shadow-md flex-shrink-0" 
-/>
+                {/* Center dot — DIPERBAIKI menggunakan absolute centering */}
+                <motion.div
+                  initial={{ scale: 0, x: "-50%" }} // Ditambahkan x: "-50%" agar sinkron dengan transisi framer-motion
+                  whileInView={{ scale: 1, x: "-50%" }}
+                  transition={{ delay: 0.3 + (i * 0.1), type: "spring", stiffness: 300 }}
+                  className="absolute left-1/2 w-8 h-8 rounded-full bg-[#49613F] z-10 ring-[4px] ring-white shadow-md flex-shrink-0"
+                />
 
                 {/* Right column */}
-                <div className="w-1/2 pl-10 flex justify-start items-center">
+                <div className="w-1/2 pl-10 flex justify-start items-center text-left">
                   {ev.align === 'right' ? (
-                    <div className="text-left">
+                    <div>
                       <p className="font-sora font-bold text-[22px] md:text-[27px] text-[#4A613E]">{ev.title}</p>
                       <p className="font-sora text-[12px] md:text-[13px] text-[#4A613E] mt-1">{ev.desc}</p>
                     </div>

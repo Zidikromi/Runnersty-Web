@@ -11,7 +11,7 @@ import Countdown from 'react-countdown';
 export default function Home({isLanding}) {
 
   // Tentukan tanggal target event Anda di sini (Format: YYYY-MM-DDTHH:mm:ss)
-  const targetDate = new Date('2026-06-05T03:00:00');
+  const targetDate = new Date('2026-08-16T00:00:00');
 
 const containerVariants = {
     hidden: { opacity: 0 },
